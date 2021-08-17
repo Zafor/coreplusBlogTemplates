@@ -25,6 +25,19 @@ End of comment */
   color: #7f7f7f;
 }
 
+/* Pagination */
+
+.page-numbers {
+  border: 1px solid #333;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.current {
+  background: #337ab7;
+  color: #fff;
+}
+
 /* @override */
 
 .progressButton {
@@ -69,22 +82,22 @@ End of comment */
   -webkit-transition: all 1s ease-in-out;
 }
 /* .post-image:before{
-    display:none;
-  }
-  .post-image:after{
-    position:absolute;
-    top:100%;
-    left:0%;
-    width:0;
-    height:4px;
-    background:#F98731;
-    display:block;
-    content:'';
-    transition: width .5s ease-in-out;
-  }
-  .post-image:hover:after{
-    width:100%;
-  } */
+  display:none;
+}
+.post-image:after{
+  position:absolute;
+  top:100%;
+  left:0%;
+  width:0;
+  height:4px;
+  background:#F98731;
+  display:block;
+  content:'';
+  transition: width .5s ease-in-out;
+}
+.post-image:hover:after{
+  width:100%;
+} */
 
 .post-image img {
   width: 100%;
@@ -182,55 +195,55 @@ End of comment */
 }
 
 /* @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .blog-nav {
-      margin-left: 10px;
-      margin-right: 15px;
-    }
-  } */
+  .blog-nav {
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+} */
 
-.desktop-bg-featured {
-  margin: auto;
-  max-width: 1750px;
-  background-image: url("https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Announce-1.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+/* .desktop-bg-featured{
+  margin:auto;
+  max-width:1750px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Announce-1.png');
+    background-repeat:no-repeat;
+    background-size:contain;
 }
 
-.desktop-bg-one {
-  margin: auto;
-  max-width: 1750px;
-  background-image: url("https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Diital-Health-1.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+.desktop-bg-one{
+   margin:auto;
+  max-width:1750px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Diital-Health-1.png');
+    background-repeat:no-repeat;
+    background-size:contain;
 }
-.desktop-bg-two {
-  margin: auto;
-  max-width: 1750px;
-  background-image: url("https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Add-ons-2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+.desktop-bg-two{
+   margin:auto;
+  max-width:1750px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Add-ons-2.png');
+    background-repeat:no-repeat;
+    background-size:contain;
 }
-.desktop-bg-three {
-  margin: auto;
-  max-width: 1750px;
-  background-image: url("https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Advisers-2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+.desktop-bg-three{
+   margin:auto;
+  max-width:1750px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Advisers-2.png');
+    background-repeat:no-repeat;
+    background-size:contain;
 }
-.desktop-bg-four {
-  margin: auto;
-  max-width: 1750px;
-  background-image: url("https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Practice-Life-2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+.desktop-bg-four{
+   margin:auto;
+  max-width:1750px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Practice-Life-2.png');
+    background-repeat:no-repeat;
+    background-size:contain;
 }
-.desktop-bg-five {
-  margin: auto;
-  max-width: 1750px;
-  background-image: url("https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Product-Releases.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+.desktop-bg-five{
+   margin:auto;
+  max-width:1750px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Product-Releases.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+} */
 
 @media screen and (max-width: 1700px) {
   .desktop-bg-featured,
@@ -276,7 +289,11 @@ End of comment */
     background-repeat: no-repeat;
     background-size: contain;
   }
-
+  .featured-title {
+    /*     background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Announce.png');
+    background-repeat:no-repeat;
+    background-size:contain; */
+  }
   .keypoint-one-mobile {
     text-align: center;
     display: block;
@@ -301,7 +318,11 @@ End of comment */
 
 .featured {
   display: flex;
-  justify-content: center;
+  /*   justify-content: center; */
+}
+
+.margin-top-20 {
+  margin-top: 20px;
 }
 
 .featured-heading {
@@ -336,6 +357,8 @@ End of comment */
 .featured-title p {
   margin-left: 25px;
   color: #f98731;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .featured-brief {
@@ -343,8 +366,8 @@ End of comment */
 }
 .featured-brief p {
   border-left: 3px #f98731 solid;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 @media (min-width: 320px) {
@@ -389,12 +412,16 @@ End of comment */
   font-weight: normal;
   font-size: 24px;
   /* display: flex;
-    align-items: center; */
+  align-items: center; */
+  color: #f98731;
+}
+
+.blog-title:hover {
   color: #f98731;
 }
 
 .blogger-top-space {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .blogger-thumbnail img {
@@ -404,6 +431,9 @@ End of comment */
 
 .featured-blogs {
   margin-top: 20px;
+}
+.featured-blog {
+  margin-bottom: 20px;
 }
 
 .section {
@@ -797,9 +827,12 @@ i {
   padding-right: 8px;
 }
 
-.reading-time,
-.social {
+.reading-time {
   margin-bottom: 10px;
+}
+
+.social {
+  /*   margin-bottom:10px; */
 }
 .reading-time i {
   padding-right: 5px;
