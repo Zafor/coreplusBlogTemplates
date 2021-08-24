@@ -41,7 +41,7 @@
             'post_type' => 'post',
             'post_status' => 'publish',
             'category_name' => 'online-add-ons-2',
-            'posts_per_page' => 6,
+            'posts_per_page' => 9,
             'paged' => $ourCurrentPage
         );
         $arr_posts = new WP_Query($args);
