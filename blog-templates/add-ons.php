@@ -80,32 +80,26 @@
                 </div>
 
         <?php
-
             endwhile;
-
         endif;
         wp_reset_postdata();
+        ?>
+    </div>
+</div>
+
+<!--  -->
+<div class="text-center">
+    <div style="margin:auto; padding-top:50px; padding-bottom:50px">
+        <?php
+
+        echo paginate_links(array(
+            'total' => $arr_posts->max_num_pages
+        ));
 
         ?>
-
-        <div style="margin:auto; padding-top:100px">
-            <?php
-
-            echo paginate_links(array(
-                'total' => $arr_posts->max_num_pages
-            ));
-
-            ?>
-        </div>
-
-
-        <!-- 		 -->
     </div>
-    <div class="s-button-div">
-        <!--         <a href="">Read More <i class="fas fa-arrow-right"></i> </a> -->
-    </div>
-
 </div>
+<!--  -->
 
 <!--  -->
 <?php get_template_part('partials/secure-messaging'); ?>

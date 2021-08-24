@@ -34,11 +34,14 @@
 <div class="section blog-width">
     <div class="section-blogs blog-width row equal">
         <?php
+        $ourCurrentPage = get_query_var('paged');
         $args = array(
             'post_type' => 'post',
             'post_status' => 'publish',
             'category_name' => 'covid-19',
-            'posts_per_page' => -1,
+            'posts_per_page' => 6,
+            'paged' => $ourCurrentPage
+
         );
         $arr_posts = new WP_Query($args);
 
@@ -80,11 +83,21 @@
         wp_reset_postdata();
         ?>
     </div>
-    <div class="s-button-div">
-        <a href="">Read More <i class="fas fa-arrow-right"></i> </a>
-    </div>
-
 </div>
+
+<!--  -->
+<div class="text-center">
+    <div style="margin:auto; padding-top:50px; padding-bottom:50px">
+        <?php
+
+        echo paginate_links(array(
+            'total' => $arr_posts->max_num_pages
+        ));
+
+        ?>
+    </div>
+</div>
+<!--  -->
 
 <!--  -->
 <?php get_template_part('partials/secure-messaging'); ?>
