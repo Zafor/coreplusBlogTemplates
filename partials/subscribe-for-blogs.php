@@ -14,7 +14,7 @@
                 jQuery(document).ready(function($) {
                     $('#subscription-form').ajaxForm({
                         success: function(response) {
-                            // console.log(response);
+                            // 						console.log(response);
                             document.getElementById("successText").innerHTML = "Thanks! You're subscribed to coreplus stories & updates";
                             document.getElementById("subscriptionInput").placeholder = response.data;
                             document.getElementById("subscriptionInput").style.border = '1px solid #61c5ba';
@@ -23,6 +23,8 @@
                             document.getElementById("subscriptionButton").src = "https://qa-web.coreplus.com.au/wp-content/uploads/2021/08/check-circle-regular.png";
                             document.getElementById("subscriptionButton").style.height = '41px';
                             document.getElementById("subscriptionButton").style.width = 'auto';
+                            document.getElementById("subscriptionButton").disabled = true;
+                            document.getElementById("subscriptionInput").disabled = true;
 
                         },
                         resetForm: true
