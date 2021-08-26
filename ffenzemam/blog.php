@@ -19,7 +19,7 @@
                 <div class="featured-title">
                     <p class="text-sm-center"><?php echo get_field('blog_featured_title'); ?></p>
                 </div>
-                <div class="featured-brief">
+                <div class="featured-brief margin-top-20">
                     <p><?php echo get_field('blog_featured_description'); ?></p>
                 </div>
             </div>
@@ -82,6 +82,7 @@
     </div>
 </div>
 
+
 <div class="section desktop-bg-one">
     <div class="blog-width">
 
@@ -93,7 +94,7 @@
                 <div class="featured-title">
                     <p class="text-sm-center"><?php echo get_field('blog_key_point_one_title'); ?></p>
                 </div>
-                <div class="featured-brief">
+                <div class="featured-brief mt-auto">
                     <p><?php echo get_field('blog_key_point_one_description'); ?></p>
                 </div>
             </div>
@@ -125,7 +126,7 @@
                             </div>
                         </div>
                         <p class="blog-category">
-                            <?php echo 'DIGITAL HEALTH' ?>
+                            <?php echo 'coreplus culture' ?>
 
                         </p>
                         <p class="section-blog-title">
@@ -155,6 +156,7 @@
     </div>
 </div>
 
+
 <!-- flex-sm-row-reverse bs class for reversing row elements -->
 
 <!--  -->
@@ -171,7 +173,7 @@
                 <div class="featured-title">
                     <p class="text-sm-center"><?php echo get_field('blog_key_point_two_title'); ?></p>
                 </div>
-                <div class="featured-brief">
+                <div class="featured-brief margin-top-20">
                     <p><?php echo get_field('blog_key_point_two_description'); ?></p>
                 </div>
             </div>
@@ -324,7 +326,7 @@
                 <div class="featured-title">
                     <p class="text-sm-center"><?php echo get_field('blog_key_point_four_title'); ?></p>
                 </div>
-                <div class="featured-brief">
+                <div class="featured-brief margin-top-20">
                     <p><?php echo get_field('blog_key_point_four_description'); ?></p>
                 </div>
             </div>
@@ -399,7 +401,7 @@
                 <div class="featured-title">
                     <p class="text-sm-center"><?php echo get_field('blog_key_point_five_title'); ?></p>
                 </div>
-                <div class="featured-brief">
+                <div class="featured-brief margin-top-20">
                     <p><?php echo get_field('blog_key_point_five_description'); ?></p>
                 </div>
             </div>
@@ -469,7 +471,7 @@
             <div class="featured-title">
                 <p class="text-sm-center"><?php echo get_field('guest_bloggers_title'); ?></p>
             </div>
-            <div class="featured-brief">
+            <div class="featured-brief margin-top-20">
                 <p><?php echo get_field('guest_bloggers_description'); ?></p>
             </div>
         </div>
@@ -484,8 +486,12 @@
             <div class="bloggger">
                 <div class="blogger-details">
                     <span class="blogger-name"><?php echo get_the_author_meta('display_name', 34) ?> </span> <br>
-                    <span class="blogger-designation">Co-Founder & CEO of
-                        CureVentus</span><br>
+                    <?php
+                    $blogger_designation = get_field('blogger_designation', 'user_' . 34);
+                    $company_name = get_field('company_institution_name', 'user_' . 34);
+                    ?>
+                    <span class="blogger-designation"><?php echo $blogger_designation ?> of
+                        <?php echo  $company_name ?></span><br>
                     <a href="<?php echo esc_url(get_author_posts_url(34)); ?>" title="<?php echo esc_attr(get_the_author()); ?>">Read Blogs &#8594; </a>
                 </div>
                 <div class="blogger-image">
@@ -506,8 +512,7 @@
             <div class="bloggger">
                 <div class="blogger-details">
                     <span class="blogger-name"><?php echo get_the_author_meta('display_name', 31) ?> </span> <br>
-                    <span class="blogger-designation">Co-Founder & CEO of
-                        CureVentus</span><br>
+                    <span class="blogger-designation">Clinical Psychologist & Coach</span><br>
                     <a href="<?php echo esc_url(get_author_posts_url(31)); ?>" title="<?php echo esc_attr(get_the_author()); ?>">Read Blogs &#8594; </a>
                 </div>
                 <div class="blogger-image">
@@ -573,9 +578,9 @@
         </div>
 
     </div>
-    <div class="s-button-div">
+    <!--     <div class="s-button-div">
         <a href="" class="btn section-button">&nbsp;&nbsp;&nbsp;View More &#8594;&nbsp;&nbsp;</a>
-    </div>
+    </div> -->
 </div>
 
 <!--  -->
