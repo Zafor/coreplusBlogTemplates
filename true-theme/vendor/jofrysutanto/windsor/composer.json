@@ -1,0 +1,44 @@
+{
+    "name": "jofrysutanto/windsor",
+    "description": "YAML-ised Configuration for ACF",
+    "homepage": "https://github.com/jofrysutanto/windsor",
+    "type": "package",
+    "keywords": [
+        "wordpress", "advanced-custom-fields"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Jofry Sutanto",
+            "email": "jofrysutanto@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/yaml": "~5.0",
+        "tightenco/collect": "^6.14"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.2",
+        "phpunit/phpunit": "^9",
+        "mockery/mockery": "^1.4",
+        "spatie/phpunit-watcher": "^1.22"
+    },
+    "autoload": {
+        "psr-4": {
+            "Windsor\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "scripts": {
+        "test": [
+            "phpcs --extensions=php --standard=PSR2 src/",
+            "vendor/bin/phpunit tests --bootstrap tests/bootstrap.php"
+        ],
+        "fix": [
+            "phpcbf src/"
+        ]
+    }
+}
