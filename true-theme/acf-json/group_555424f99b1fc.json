@@ -1,0 +1,204 @@
+{
+    "key": "group_555424f99b1fc",
+    "title": "Page Banner",
+    "fields": [
+        {
+            "key": "field_52e84316cb70d",
+            "label": "Banner Line 1",
+            "name": "banner_line_1",
+            "type": "text",
+            "instructions": "First line of banner. Wrap text in a [happy]tag[\/happy] to make the font change to Jenna Sue (cursive).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52e8434fcb70e",
+            "label": "Banner Line 2",
+            "name": "banner_line_2",
+            "type": "text",
+            "instructions": "Bolder, second banner line.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52e84366cb70f",
+            "label": "Banner Line 3",
+            "name": "banner_line_3",
+            "type": "text",
+            "instructions": "Extended, last banner line.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "544"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "546"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "636"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "708"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "761"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "688"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "757"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "767"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "759"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "807"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "763"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "755"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "717"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/page-generic.php"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "4901"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "5422"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "true_feature"
+            }
+        ]
+    ],
+    "menu_order": 100,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1536646839
+}

@@ -1,0 +1,8 @@
+
+	
+	
+	.ie8 #header-nav .sub-menu { position:absolute; }
+	.ie8 .image-on-bottom .image-box:before, .ie8 .image-on-bottom .image-box:after 
+	{
+		display:none;
+	}

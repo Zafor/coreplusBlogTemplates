@@ -1,0 +1,49 @@
+.text-with-logos-banner {
+    padding: 30px 0;
+    
+    @media(min-width: $layout-breakpoint) {
+        padding: 8.2rem 0;
+    }
+
+    &__content {
+        margin-top: 25px;
+        font-size: 14px;
+        line-height: 1.4em;
+    }
+    $logo-size-large: 208px;
+    $logo-size-large-mobile: 100px;
+    &__logo-wrap {
+        display: inline-block;
+        position: relative;
+        height: $logo-size-large-mobile;
+        width: $logo-size-large-mobile;
+        border-radius: 50%;
+        background-color: #F5F5F5;
+        
+        &:not(:first-child) {
+            margin-left: 32px;
+        }
+
+        @media(min-width: $layout-breakpoint) {
+            height: $logo-size-large;
+            width: $logo-size-large;
+        }
+    }
+    &__logo {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        transform: translate(0, -50%);
+        text-align: center;
+
+        img {
+            max-width: 60px;
+            margin: auto !important;
+            
+            @media(min-width: $layout-breakpoint) {
+                max-width: 130px;
+            }
+        }
+    }
+}

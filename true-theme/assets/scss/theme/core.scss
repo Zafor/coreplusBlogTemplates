@@ -1,0 +1,233 @@
+/**
+ * Collections of utility classes and WP fixes
+ * Happy coding!
+ *
+ * $author TrueAgency
+ */
+
+/**
+ * ================== Navbar fixed top ==================
+ *
+ * By default add enough margin to main wrapper
+ * when we have fixed nav
+ *
+ */
+header.navbar-fixed-top + .wrap {
+	margin-top: $navbar-height;
+}
+
+@media(max-width: $screen-md-max) {
+    .container {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/**
+ * ================== WP Admin Bar ==================
+ *
+ * When WP Admin bar present causes a lot of trouble
+ * for developers
+ *
+ */
+@media all and (min-width: $screen-md-min) {
+    body.admin-bar .navbar-fixed-top { // Fixed navbar adjusted properly
+        top: 32px;
+    }
+}
+@media (max-width: $screen-sm-max) {
+    #wpadminbar {
+        display: none;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: $screen-sm-max) { // Hide WP Admin bar on tablet
+    body.admin-bar {
+        margin-top: -32px !important;
+    }
+}
+
+@media (max-width: 768px) { // Hide WP Admin bar on tablet
+    body.admin-bar {
+        margin-top: -46px !important;
+    }
+}
+
+
+/**
+ * ================== Navbar Hoverable dropdown ==================
+ * Allow hover for dropdown as well
+ * @see http://stackoverflow.com/questions/19935480/bootstrap-3-how-to-make-head-of-dropdown-link-clickable-in-navbar
+ */
+// @media all and (min-width: $screen-md-min) {
+// 	ul.nav li.dropdown:hover ul.dropdown-menu {
+// 	   display: block !important;
+// 	}
+// }
+
+/**
+ * ================== Table Layout ==================
+ *
+ * Ever have to repeat display: table and display: table-cell over
+ * and over again? Well, not anymore!
+ * Simply assign these classes in.
+ *
+ */
+.layout-table {
+	display: table; width: 100%; height:100%;
+
+	> .cell, > .layout-cell, .layout-table__cell {
+		display: table-cell;
+		vertical-align: middle;
+        height:100%;
+
+        &--align-bottom {
+            vertical-align: bottom;
+        }
+	}
+}
+
+/**
+ * ================== Responsive utility classes ==================
+ *
+ * Makes life easier when doing desktop first.
+ *
+ */
+@media (max-width: $screen-sm-max) {
+	// Text centered on tablet
+	.text-center-sm {
+		text-align: center !important;
+	}
+	// No float on tablet
+	.pull-none-sm {
+		float: none !important;
+	}
+}
+@media (max-width: $screen-xs-max) {
+	// Text centered on mobile
+	.text-center-xs {
+		text-align: center !important;
+	}
+	// No float on mobile
+	.pull-none-xs {
+		float: none !important;
+	}
+}
+
+/**
+ * ================== Override Contact Form 7 ==================
+ *
+ */
+
+/* Plugin Override */
+div.wpcf7-response-output {
+    margin: 0 0 20px;
+}
+
+
+div.wpcf7-mail-sent-ok {
+    border: 0;
+    color: $brand-success;
+    margin-right: 0; margin-left: 0;
+    padding-right: 0; padding-left: 0;
+}
+
+span.wpcf7-not-valid-tip {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    color: $brand-danger;
+}
+
+div.wpcf7-mail-sent-ng, div.wpcf7-spam-blocked, div.wpcf7-validation-errors {
+    border: 0;
+    color: $brand-danger;
+    margin-right: 0; margin-left: 0;
+    padding-right: 0; padding-left: 0;
+}
+
+span.wpcf7-form-control-wrap { width: 100%; }
+
+div.wpcf7 img.ajax-loader { margin-top: 20px; margin-left: 0; }
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+
+   and TrueLib::getWysiwygField()
+   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+.true-wysiwyg-field {
+
+    font-family: $font-family-default !important;
+
+    * {
+        font-family: $font-family-default !important;
+    }
+
+    img {
+        @include img-responsive();
+    }
+
+    table {
+        td {
+            padding:5px;
+        }
+    }
+
+    //Figure Captions
+    .thumbnail
+    {
+        &.alignleft {
+            margin-right: 30px;
+        }
+
+        &.alignright {
+            margin-left: 30px;
+        }
+
+        .caption {
+            text-align:center;
+        }
+    }
+
+    blockquote {
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+    }
+    blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }
+    blockquote p {
+        display: inline;
+    }
+
+    h2 {
+        font-weight: 300;
+    }
+
+    h3 {
+        color: $colour-dark-body-text;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 30px;
+        letter-spacing: 0px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0px;
+}

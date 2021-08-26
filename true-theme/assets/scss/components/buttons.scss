@@ -1,0 +1,242 @@
+a { cursor: pointer; }
+
+
+.waves-effect.waves-corplus-teal .waves-ripple {
+ /* The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: transparentize($colour-brand-teal, 0.65);
+}
+
+.waves-effect.waves-corplus-orange .waves-ripple {
+/* The alpha value allows the text and background color
+of the button to still show through. */
+    background-color: transparentize($colour-brand-orange, 0.65);
+}
+
+.waves-effect.waves-corplus-dark .waves-ripple {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+        background-color: transparentize($colour-dark-grey, 0.65);
+    }
+
+.btn--no-shadow {
+    box-shadow: none !important;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 8px 22px;
+    padding-top: 9px;
+    transition: all ease 0.35s;
+    text-decoration: none !important;
+    border-radius: 4px;
+    border: 0px;
+    outline: none !important;
+
+    @extend .waves-effect;
+
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.05), 
+        0 6px 30px 5px rgba(0,0,0,0.06), 
+        0 8px 10px -5px rgba(0,0,0,0.05);
+
+    &:hover {
+        box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 
+            0 3px 14px 2px rgba(0,0,0,0.05), 
+            0 5px 5px -3px rgba(0,0,0,0.2);  
+    }
+    
+    &--small-shadow {
+        box-shadow: 0 3px 5px 2px rgba(0,0,0,0.15);
+        &:hover {
+            box-shadow: 0 3px 5px 2px rgba(0,0,0,0.15);
+        }
+    }
+}
+
+.btn--colour-orange {
+    background-color: $colour-brand-orange;
+    color: white;
+
+    @extend .waves-light;
+    
+    &:active,
+    &:focus,
+    &:hover {
+        color: white;
+        background-color: lighten($colour-brand-orange, 5%);
+    }
+}
+
+.btn--colour-teal {
+    background-color: $colour-brand-teal;
+    color: white;
+
+    @extend .waves-light;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: white;
+        background-color: lighten($colour-brand-teal, 5%);
+    }
+}
+
+.btn--colour-orange-border {
+    border: 1px solid $colour-brand-orange;
+    color: $colour-brand-orange;
+
+    @extend .waves-light;
+    
+    &:active,
+    &:focus,
+    &:hover {
+        color: white;
+        background-color: $colour-brand-orange;
+    }
+}
+
+.btn--colour-pink {
+    background-color: $colour-brand-pink;
+    color: white;
+
+    @extend .waves-light;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: white;
+        background-color: lighten($colour-brand-pink, 5%);
+    }
+}
+
+.btn--colour-black {
+    background-color: $colour-dark-grey;
+    color: white;
+
+    @extend .waves-light;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: white;
+        background-color: lighten($colour-dark-grey, 5%);
+    }
+}
+
+.btn--invisible-black {
+    background-color: transparent;
+    color: $colour-dark-grey;
+    box-shadow: none;
+
+    @extend .waves-light;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: $colour-dark-grey;
+        color: white;
+        box-shadow: 0 16px 24px 2px rgba(0,0,0,0.05), 
+            0 6px 30px 5px rgba(0,0,0,0.05), 
+            0 8px 10px -5px rgba(0,0,0,0.1);
+    }
+}
+
+.btn--colour-white {
+    background-color: white;
+    color: $colour-brand-orange;
+
+    @extend .waves-corplus-teal;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $colour-brand-orange;
+        background-color: lighten(white, 5%);
+    }
+}
+
+.btn--colour-white-black {
+    background-color: white;
+    color: $colour-dark-grey;
+
+    @extend .waves-corplus-dark;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $colour-dark-grey;
+        background-color: lighten(white, 5%);
+    }
+}
+
+.btn--colour-white-teal {
+    background-color: white;
+    color: $colour-brand-teal;
+
+    @extend .waves-corplus-teal;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $colour-brand-teal;
+        background-color: lighten(white, 5%);
+    }
+}
+
+.btn--colour-red {
+    background-color: $colour-brand-red;
+    color: white;
+
+    @extend .waves-light;
+
+    padding: 8px 22px !important;
+    border: none !important;
+    line-height: 1.47571 !important;
+    box-shadow: none !important;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: white;
+        background-color: lighten($colour-brand-red, 5%);
+    }
+}
+
+.btn--colour-solid-orange {
+    background-color: $colour-brand-orange;
+    color: white !important;
+
+    @extend .waves-light;
+
+    padding: 8px 22px !important;
+    font-size: .8em !important;
+    border: none !important;
+    line-height: 1.47571 !important;
+    box-shadow: none !important;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: white;
+        background-color: lighten($colour-brand-orange, 5%);
+    }
+}
+
+
+/** --------------- Sizes ----------- **/
+.btn--size-medium {
+    padding: 13px 38px;
+    padding-top: 13px;
+    font-size: 16px;
+
+    > i { margin-bottom: -1px; }
+}
+
+
+.btn--size-fixed-width {
+    min-width: 200px;
+}
+/** -------------./ Sizes ----------- **/

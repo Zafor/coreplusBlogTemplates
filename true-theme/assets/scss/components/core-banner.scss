@@ -1,0 +1,75 @@
+.core-banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    position: relative;
+
+    &__content { 
+        padding-top: 30px; padding-bottom: 30px; 
+    }
+
+    &__overlay { background-color: rgba(88,89,91,.5);  }
+
+    &__button { margin-top: 30px; }
+
+    @media(max-width: $screen-xs-max) {
+        text-align: center;
+
+        &__product-image {
+            margin-bottom: 20px;
+
+            img {
+                max-width: 200px;
+                margin: auto;
+            }
+        }
+    }
+
+    @media(min-width: $screen-sm-min) {
+        height: 520px;
+
+        &__content {
+            width: 100%;
+            display: table;
+            height: 520px; 
+        }
+        
+        &__overlay {
+            height: 520px;
+        }
+
+        &__cell {
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        h1 {
+            font-weight: 300;
+        }
+
+        p {
+            color: rgb(218, 217, 213);
+            font-weight: 300;
+        }
+
+        &__product-image img {
+            transform: translateY(100px) scale(1.2)
+        }
+    }
+
+    
+    &--colour-grey & {
+        &__overlay {
+            color: #000;
+            background-color: #fafafa;
+            
+            p {
+                color: #000;
+            }
+        }
+    }
+}

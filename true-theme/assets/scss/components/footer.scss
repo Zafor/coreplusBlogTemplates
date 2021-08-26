@@ -1,0 +1,220 @@
+
+.site-footer {
+	background-color: #FAFAFA;
+	padding-bottom: 10px;
+
+	.menu-more {
+		display: none;
+	}
+	
+	//Row padding
+	&__row { padding-bottom: 40px; }
+
+	&__block {
+		@media(max-width: $screen-xs-max) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__nav {
+		ul { 
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+
+			> li {
+				> a {
+					font-size: 14px;
+                    color: $colour-dark-body-text;
+					transition: all ease 0.35s;
+					text-decoration: none !important;
+				}
+			}
+		}
+	}
+	
+	/** --------------- Sub Navigation ----------- **/
+	&__sub-nav li {
+		margin-bottom: 4px;
+
+		> a {
+            font-weight: 700;
+			&:hover,
+			&:focus,
+			&:active {
+				color: $colour-brand-orange;
+			}
+		}
+	}
+	/** -------------./ Sub Navigation ----------- **/
+	
+	/** --------------- Primary Navigation ----------- **/
+	&__primary-nav {
+		ul > li {
+			margin-bottom: 6px;
+
+			> a {
+				text-transform: uppercase;
+				font-weight:bold;
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: $colour-brand-pink;
+				}
+			}
+		}
+	}
+	/** -------------./ Primary Navigation ----------- **/
+
+	&__slider {
+		display: none;
+		border-top: 2px solid #EAEAEA;
+		border-bottom: 2px solid #EAEAEA;
+		padding: 10px 0px;
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	&__copy { font-size: 0.7em; }
+	&__professions { 
+        .shortcode-underline {
+            border-bottom: 0px !important;
+        }
+    }
+
+	&__professions-list {
+		padding-top: 40px;
+
+        a { color: $colour-dark-body-text; }
+        		
+		@media(max-width: $screen-xs-max) {
+			.site-footer__nav { margin-bottom: 30px; }
+		}
+	}
+	
+	@media(min-width: $screen-sm-min) {
+		&__professions-list-two-col {
+			li {
+				width: 50%;
+				float: left;
+			}
+		}
+	}
+}
+
+/** --------------- Footer Details ----------- **/
+.site-footer-details {
+
+	&__block {
+		margin-bottom: 20px;
+		color: $colour-dark-body-text;
+		font-weight: 300;
+		overflow-wrap: break-word;
+  		word-wrap: break-word;
+  		font-size: 14px;
+
+		h4 {
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 14px;
+			margin-bottom: 10px;
+			color: $colour-dark-body-text;
+		}
+
+		a { color: $colour-dark-body-text; }
+	}
+}
+/** -------------./ Footer Details ----------- **/
+
+
+/** --------------- Social Icons ----------- **/
+.site-social-block {
+	border-top: 1px solid #eaeaea;
+	margin-top: 20px;
+	padding-top: 26px;
+	margin-bottom: 30px;
+
+	> h4 {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 14px;
+		margin-bottom: 10px;
+		color: #58595b;
+	}
+}
+
+
+.site-social-accounts {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+
+	li {
+		display: inline-block;
+		margin-right: 10px;
+
+		a {
+			color: $colour-dark-grey;
+
+			transition: all ease 0.35s;
+
+			&:hover {
+				color: $colour-brand-pink;
+			}
+		}
+	}
+}
+/** -------------./ Social Icons ----------- **/
+
+/**
+ * ================== True Footer ==================
+ * 
+ * Web design by True.
+ * 
+ */
+// .true-footer-block
+// {
+// 	margin: 0; float: right; display: inline-block;
+// 	overflow:hidden; position:relative; height:20px; min-width:150px;
+
+// 	a {
+// 	    display:block; text-decoration:none !important; padding-left:10px; text-align:right; line-height:20px;
+// 	}
+// 	@media (max-width: $screen-xs-max) {
+// 	    margin-top: 10px;
+// 	    a {
+// 	        text-align: center;
+// 	    }
+// 	}
+// 	.hover-text {
+// 	    text-transform:lowercase; top:100%; font-weight:bold;
+// 	    position:absolute; left:0px;right:0px; margin:auto;
+// 	    background-color: transparent; z-index:4;
+// 	    line-height:16px;
+// 		@include transition(all 350ms ease-in-out);
+// 	}
+
+// 	.normal-text {
+// 	    position:absolute; left:0px;right:0px; margin:auto;
+// 	    top:0%;
+// 	    line-height:16px;
+// 	    @include transition(all 350ms ease-in-out);
+// 	}
+// 	img {
+// 	    vertical-align:middle; margin-top:-3px; display:inline-block;
+// 	}
+// 	&:hover .hover-text {
+// 	    top:0px;
+// 	}
+// 	&:hover .normal-text {
+// 	    top:-100%;
+// 	}
+
+// 	@media(max-width: $screen-xs-max) {
+// 	    float: none;
+// 	}
+// }

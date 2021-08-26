@@ -1,0 +1,11 @@
+// Copied from Tailwind utilities
+*, :after, :before {
+    border: 0 solid #e2e8f0;
+}
+
+@import "mixins";
+@import "core";
+@import "type";
+
+@import "layout";
+@import "icons";

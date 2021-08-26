@@ -1,0 +1,224 @@
+span[data-profession-trigger] {
+    cursor: pointer;
+}
+
+/** --------------- Profession Selector ----------- **/
+.profession-selector {
+    &__heading {
+        font-weight: 300;
+        margin-bottom: 0px;
+        font-size: 16px;
+        @media(min-width: $screen-md-min) {
+            font-size: 16px;
+        }
+
+        .shortcode-underline {
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+            border-bottom: 1px solid white;
+            cursor: pointer;
+        }
+        
+        &:after {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            font-family: 'FontAwesome';
+            content: $fa-var-angle-down;
+            font-size: 1.5em;
+            margin-left: 1px;
+            top: -1px;
+        }
+    }
+
+    &__content {
+        background-color: $colour-brand-teal;
+        color: white;
+        text-align: center;
+        position: relative;
+        padding: 10px 10px;
+        
+        @media(min-width: $screen-md-min) {
+            padding: 15px 180px;
+        }
+    }
+
+    &__close {
+        margin-top: 10px;
+        font-size: 0.9em;
+        cursor: pointer;
+        font-size: 0.95em;
+
+        i {
+            margin-left: 10px;
+            font-size: 1em;
+            margin-bottom: -3px;
+        }
+
+        @media(min-width: $screen-sm-min) {
+            position: absolute; 
+            top: 50%;
+            margin-top: -12.5px;
+            right: 50px;
+        }
+    }
+    
+    // Mobile
+    @media(max-width: $screen-xs-max) {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        z-index: 10000;
+        border-radius: 4px;   
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0,0,0,.12);
+        
+        &__content {
+            padding: 20px 35px;
+            background-color: rgba($colour-brand-teal, 0.95);
+        }
+        h4 {
+            line-height: 1.5em;
+            margin-bottom: 20px;
+        }
+    }
+}
+/** -------------./ Profession Selector ----------- **/
+
+/** --------------- Profession Selector Popup ----------- **/
+.profession-selector-popup {
+    position: fixed; 
+    display: none;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 20px;
+    z-index: 2000;
+    overflow: auto;
+    margin: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.profession-selector-dialog {
+    max-width: 575px;
+    margin: auto;
+    background-color: #F9F9F9;
+    border-radius: 5px;
+    padding: 70px 20px;
+    position: relative;
+
+    transform: translateY(-10px);
+    transition-delay: 1s;
+    transition: transform ease 0.35s;
+
+    background-image: url('../img/banners/pop_up_menu_topleft.png'), url('../img/banners/pop_up_menu_bottom_right.png');
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+
+    @media(min-width: $screen-sm-min) {
+        padding: 110px 20px;
+    }
+
+    &.do-animation { transform: translateY(0px); }
+
+    &__close {
+        text-align: right;
+        font-size: 0.95em;
+        font-weight: 500;
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        padding-top: 30px;
+        padding-right: 30px;
+        color: $colour-dark-grey;
+        float: right;
+
+        i {
+            margin-left: 10px;
+            font-size: 1.2em;
+            margin-bottom: -3px;
+        }
+    }
+    
+    &__header { 
+        margin-bottom: 10px;
+
+        @media(min-width: $screen-sm-min) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__content {
+        max-width: 365px;
+        margin: auto;
+    }
+
+    &__footer { 
+        text-align: center;
+        margin-top: 70px;
+    }
+
+    &__choices {
+        padding: 0px;
+
+        li {
+            display: block;
+            font-size: $type-font-size-h3;
+
+            a {
+                color: $colour-body-text;
+                font-weight: 600;
+                cursor: pointer;
+                text-decoration: none !important;
+                transition: all ease 0.75s, color ease 0.35s;
+                opacity: 0;
+                transform: translateY(-10px);   
+                border-bottom: 1px solid #D0D0D0; 
+                padding: 20px 0px;
+                display: block;
+                
+                &.active,
+                &:focus,
+                &:hover,
+                &:active {
+                    color: $colour-brand-pink;
+                }
+
+                &.do-animation {
+                    transform: translateY(0px);  
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
+    &__loader {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+        display: none;
+        transition: opacity ease 0.35s;
+
+        background-color: rgba(0,0,0, 0.3);
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: -25px;
+            margin-left: -25px;
+        }
+    }
+} 
+
+/** -------------./ Profession Selector Popup ----------- **/

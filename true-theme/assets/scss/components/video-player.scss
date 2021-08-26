@@ -1,0 +1,32 @@
+.video-player {
+    position: relative;
+    display: block;
+
+    &:after,
+    &:before {
+        content: '';
+        position: absolute; 
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        margin: auto;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+
+    &:before {
+        background-color: rgba(0,0,0,0.4);
+        transition: background ease 1s;
+        background-image: url('../img/video/playbutton.png');
+    }
+
+    &:after {
+        background-image: url('../img/video/playbutton_hover.png');
+        opacity: 0;
+        transition: opacity ease 1s;
+    }
+    
+    &:hover:before { background-color: rgba(0,0,0,0.2); }
+    &:hover:after { opacity: 1; }
+}

@@ -1,0 +1,160 @@
+body.lock-scroll {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.layout-block {
+
+    &--border-top-grey {
+        border-bottom: 1px solid #e4e4e4;
+    }
+
+    &--padded-semi-medium,
+    &--padded {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    &--padding-top { padding-top: 30px; }
+
+    &--padding-bottom { padding-bottom: 30px; }
+
+    &--padding-medium,
+    &--padding-top-medium { padding-top: 30px; }
+    &--padding-medium,
+    &--padding-bottom-medium { padding-bottom: 30px; }
+
+    @media(min-width: $screen-sm-min) {
+        &--padded-semi-medium,
+        &--padded {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        &--padding-top { padding-top: 50px; }
+        &--padding-bottom { padding-bottom: 50px; }
+    }
+
+    @media(min-width: $screen-md-min) {
+
+        &--padded-semi-medium {
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+
+        &--padded {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        &--padding-top { padding-top: 100px; }
+        &--padding-bottom { padding-bottom: 100px; }
+
+
+        &--padding-medium,
+        &--padding-top-medium { padding-top: 50px; }
+
+        &--padding-medium,
+        &--padding-bottom-medium { padding-bottom: 50px; }
+    }
+    
+    /** --------------- Colours ----------- **/
+    &--colour-grey { background-color: #FAFAFA; }
+
+    &--colour-black {
+        background-color: $colour-off-black;
+        color: white;
+    }
+
+    &--colour-teal {
+        background-color: $colour-brand-teal;
+        color: white;
+    }
+    
+    &--colour-dark-teal {
+        background-color: $colour-brand-dark-teal;
+        color: white;
+    }
+
+    &--colour-white {
+        background-color: #fff;
+    }
+
+    &--colour-orange {
+        background-color: $colour-brand-orange;
+        color: white;
+    }
+
+    &--left-pattern {
+        background-image: url('../img/banners/coloured_lines_behind_vid.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left center;
+    }
+
+    /** -------------./ Colours ----------- **/
+
+    &__title { 
+        text-align: center;
+        margin-bottom: 30px;
+    
+        @media(min-width: $screen-sm-min) {
+            margin-bottom: 70px;
+        }
+    }
+
+    &__button-spacer {
+        padding-top: 30px;
+    }
+    
+    .layout-block__two-col-cell {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    @media(min-width: $screen-sm-min) {
+        &__two-col {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+
+            .layout-block__two-col-cell {
+                display: table-cell;
+                width: 50%;
+                vertical-align: middle;
+                padding: 0px 20px;
+                text-align: left;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+.layout-card {
+    max-width: 700px;
+    margin: auto;
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0 2px 12px 1px rgba(0,0,0,.14);
+    
+    @media(min-width: $screen-md-min) {
+        padding: 40px;
+    }
+}
+
+.container-wide {
+    max-width: 1780px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box !important;
+    
+    > .site-content {
+        float: none !important;
+    }
+}

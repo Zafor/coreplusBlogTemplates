@@ -1,0 +1,50 @@
+.feature-block {
+    .row:last-child {
+        .feature-block-item {
+            @media(min-width: $screen-sm-min) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.feature-block-item {
+    text-align: center;
+    margin-bottom: 40px;
+
+    &__buttons {
+        margin: 0px;
+        padding: 0px;
+        margin-top: 20px;
+        list-style: none;
+
+        li {
+            display: inline-block; 
+            transition: all ease 0.35s;
+
+            .btn { font-size: 13px; }
+            
+            @media(min-width: $screen-lg-min) {            
+                & + li {
+                    border-left: 2px solid $colour-dark-body-text;
+                    padding-left: 5px;
+                }
+            }
+            
+            @media(max-width: $screen-md-max) {   
+                display: block; 
+
+                .btn {
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+            }
+        }
+        
+        @media(min-width: $screen-md-min) {          
+            &:hover li + li {
+                border-left: 2px solid transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+node_modules
+*.log
+.cache
+Thumbs.db
+dist/*
+assets/css/*.min.css
+assets/css/*.map
+assets/css/main.min.css.map
+assets/css/main.min.css
+assets/css/vendor.min.css
+assets/js/dist/*.min.js
+assets/js/dist/*.map
+assets/js/dist/main.min.js
+assets/js/dist/vendor.min.js
+vendor
+assets/parcel-output
+sftp-config.json
+alt-sftp-config.json
+sftp-config-alt.json
+.DS_STORE
+.vscode
+.DS_Store
+.phpintel
+.env

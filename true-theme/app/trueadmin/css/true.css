@@ -1,0 +1,45 @@
+
+
+/** Disable Default WP Admin Sidebar **/
+
+#wpcontent {
+	margin-left: 0;
+}
+
+#adminmenuback { z-index:1px !important; }
+
+/** Fixing metronic stuff */
+
+.page-sidebar-menu {
+	margin-top: 32px;
+}
+
+.page-content { margin-left:160px !important; }
+
+/** For debuggng purposes only */
+/** Comment when not needed **/
+pre {
+	color: white;
+	background-color: #F4726D;
+	position: absolute;
+	z-index:99999;
+}
+
+	/* Reports */
+	.portlet-title.click-able { cursor: pointer; }
+
+
+/** Parsley Error Message **/
+ul.parsley-errors-list > li {
+	float: right;
+	background: #D54E4E;
+	color: #FFF;
+	padding: 3px 2px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+ul.parsley-errors-list {
+	margin-bottom: 0px !important;
+}

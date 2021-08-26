@@ -1,0 +1,38 @@
+.flex-content-wrap {
+    .flex-content-heading {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.2em;
+
+        @include responsive-font(4vw, 22px, 32px, 24px);
+    
+        &.green {
+            color: $colour-brand-green;
+        }
+        &.orange {
+            color: $colour-brand-orange;
+        }
+        &.white {
+            color: #fff;
+            background-color: transparent !important;
+        }
+    }
+    .flex-content-col {
+        position: relative;
+    }
+
+    @media(min-width: $layout-breakpoint) {
+        .flex-content-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+        .flex-content-col {
+            max-width: 475px;
+        }
+    }
+}

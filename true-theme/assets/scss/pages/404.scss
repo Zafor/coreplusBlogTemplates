@@ -1,0 +1,44 @@
+.page-404-container {
+	padding-top: 180px;
+	padding-bottom: 60px;
+
+
+	.page-title.title-404, .page-title.title-404 > span {
+		font-size: 180px;
+		text-transform: uppercase; font-weight: bold;
+		letter-spacing: 3px;
+		margin-bottom: 10px;
+		color: rgba(233, 233, 233, 1);
+		padding-top: 80px;
+	}
+
+	.not-found-heading, .not-found-heading > span {
+		font-size: 70px; text-transform: uppercase;
+		font-weight: normal; color: $colour-brand-orange;
+	}
+
+	.not-found-heading > span {
+		color: #333;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		.page-title.title-404, .page-title.title-404 > span {
+			font-size: 70px;
+			text-align: center !important;
+			padding-top: 10px;
+		}
+
+		.not-found-heading, .not-found-heading > span {
+			text-align: center !important;
+		}
+
+		p.lead {
+			text-align: center;
+		}
+
+		.btn {
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}

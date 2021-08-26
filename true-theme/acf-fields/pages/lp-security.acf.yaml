@@ -1,0 +1,319 @@
+title: 'Landing Page - Security'
+key: 'lp_secure'
+position: 'acf_after_title'
+hide_on_screen:
+  - the_content
+location:
+  -
+    -
+      param: 'page_template'
+      operator: '=='
+      value: 'page-templates/page-lp-security.php'
+fields:
+  main_tab:
+    label: Main
+    type: "tab"
+    placement: "top"
+    endpoint: false
+  main:
+    label: Main
+    type: "flexible_content"
+    button_label: "Add Row"
+    min: 0
+    max: 0
+    layouts:
+      lp_header:
+        display: 'block'
+        label: Header Banner
+        sub_fields:
+          type:
+            label: Type
+            type: "button_group"
+            layout: horizontal
+            return_format: value
+            choices:
+              static: 'Static'
+              video: 'Has Video'
+          bg_image:
+            label: Background Image
+            type: "image"
+            preview_size: 'large'
+            max_size: 5 # in MB
+            max_width: 2000 # in px
+            max_height: 2000 # in px
+            wrapper_width: 50
+          banner_image:
+            label: Banner Image
+            type: "image"
+            preview_size: 'large'
+            max_size: 5 # in MB
+            max_width: 2000 # in px
+            max_height: 2000 # in px
+            wrapper_width: 50
+          heading:
+            type: text
+            label: Heading
+            wrapper_width: 50
+          description:
+            label: Description
+            type: 'textarea'
+            new_lines: 'wpautop'
+            rows: 4
+            wrapper_width: 50
+          link:
+            label: Link
+            type: "link"
+            return_format: "array"
+            wrapper_width: 50
+          video_link:
+            label: Video Link
+            instructions: "Add embeddable video link"
+            type: "text"
+            wrapper_width: 50
+            conditional_logic:
+              -
+                -
+                  field: type
+                  operator: '=='
+                  value: 'video'
+      simple_cta:
+        display: 'block'
+        label: Simple Features List
+        sub_fields:
+          items:
+            label: Items
+            type: "repeater"
+            layout: "block"
+            collapsed: heading
+            sub_fields:
+              content:
+                label: Content
+                type: "blueprint"
+                source: "basic-content"
+                prefix: false
+                prefix_label: false
+      prominent_section_2:
+        display: 'block'
+        label: Prominent Section - Simple
+        sub_fields:
+          intro:
+            label: Intro
+            type: "blueprint"
+            source: "basic-content"
+            prefix: false
+            prefix_label: false
+            excludes:
+              - image
+              - link
+          list_items:
+            label: List Items
+            type: "repeater"
+            layout: "block"
+            collapsed: heading
+            sub_fields:
+              content:
+                label: Content
+                type: "blueprint"
+                source: "basic-content"
+                prefix: false
+                prefix_label: false
+                layout:
+                  - heading@50
+                  - description@50
+                  - image@50
+                  - link@50
+      prominent_section:
+        display: 'block'
+        label: Prominent Section - Large
+        sub_fields:
+          main:
+            label: Main
+            type: "blueprint"
+            source: "basic-content"
+            prefix: false
+            prefix_label: false
+            excludes:
+              - description
+            layout:
+              - heading@50
+              - link@50
+              - image@100
+          list_items:
+            label: List Items
+            type: "repeater"
+            layout: "block"
+            sub_fields:
+              list_content:
+                label: List Content
+                type: "blueprint"
+                source: "basic-content"
+                prefix: false
+                prefix_label: false
+                excludes:
+                  - link
+      full_w_cta:
+        display: 'block'
+        label: Full Width CTA
+        sub_fields:
+          style:
+            label: Style
+            type: "button_group"
+            layout: horizontal
+            return_format: value
+            choices:
+              with_text: 'With Description'
+              with_image: 'With Image'
+          content:
+            label: Content
+            type: "blueprint"
+            source: "basic-content"
+            prefix: false
+            prefix_label: false
+            layout:
+              - heading@50
+              - link@50
+              - image@100
+              - description@100
+            merge:
+              image:
+                label: Image
+                type: "image"
+                conditional_logic:
+                  -
+                    -
+                      field: style
+                      operator: '=='
+                      value: with_image
+              description:
+                label: Description
+                type: 'textarea'
+                conditional_logic:
+                  -
+                    -
+                      field: style
+                      operator: '=='
+                      value: with_text
+      text_img_column:
+        display: 'block'
+        label: Text & Image Column
+        sub_fields:
+          content:
+            label: Content
+            type: "blueprint"
+            source: "basic-content"
+            prefix: false
+            prefix_label: false
+      featured_posts:
+        display: 'block'
+        label: Featured Posts
+        sub_fields:
+          content:
+            label: Content
+            type: "blueprint"
+            source: "basic-content"
+            prefix: false
+            prefix_label: false
+            excludes:
+              - image
+              - link
+          posts:
+            label: Posts
+            type: "relationship"
+            post_type:
+              - 'post'
+            filters:
+              - 'search'
+              - 'post_type'
+              - 'taxonomy'
+            elements:
+              - 'featured_image'
+            min: 0
+            max: 12
+            return_format: 'object'
+      accordion:
+        display: 'block'
+        label: Accordion
+        sub_fields:
+          content:
+            label: Content
+            type: "blueprint"
+            source: "basic-content"
+            prefix: false
+            prefix_label: false
+            excludes:
+              - image
+              - link
+          sections:
+            label: Accordion Tabs
+            type: "repeater"
+            layout: "block"
+            collapsed: section_heading
+            button_label: Add Section
+            sub_fields:
+              section_heading:
+                type: text
+                label: Section Heading
+                instructions: "Make sure this is unique across all other accordion headings"
+              items:
+                label: Accordion Items
+                type: "repeater"
+                layout: "block"
+                collapsed: heading
+                button_label: Add Accordion Row
+                sub_fields:
+                  heading:
+                    type: text
+                    label: Heading
+                  content:
+                    label: Content
+                    type: "wysiwyg"
+                    tabs: 'all'
+                    toolbar: 'basic'
+                    media_upload: false
+                    delay: true
+      testimonial:
+        display: 'block'
+        label: 'Testimonial'
+        sub_fields:
+          heading:
+            type: text
+            label: Heading
+          intro:
+            label: Intro
+            type: 'textarea'
+            new_lines: 'br'
+            rows: 4
+          items:
+            label: Testimonials
+            type: "repeater"
+            layout: "block"
+            max: 10
+            sub_fields:
+              name:
+                type: text
+                label: Name
+                wrapper_width: 50
+              handle:
+                type: text
+                label: Handle
+                wrapper_width: 50
+                instructions: "e.g. @my_twitter_handle"
+              is_auto_expanded:
+                label: Automatically Expand Review
+                type: "true_false"
+                wrapper_width: 50
+                ui: true
+                default: false
+              avatar:
+                label: Avatar
+                type: "image"
+                preview_size: 'thumbnail'
+                max_size: 5 # in MB
+                max_width: 2000 # in px
+                max_height: 2000 # in px
+                wrapper_width: 50
+              content:
+                label: Content
+                type: 'textarea'
+                new_lines: 'br'
+                rows: 2

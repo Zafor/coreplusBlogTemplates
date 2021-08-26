@@ -1,0 +1,69 @@
+.add-ons-list {
+    margin-top: 30px;
+    @media(min-width: $layout-breakpoint) {
+        margin-left: $add-on-list-margin-left-space;
+        margin-top: 50px;
+    }
+
+    * {
+        box-sizing: border-box !important;
+    }
+}
+
+.single-add-on-tile {
+    display: block;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12);
+    transition:
+        box-shadow 0.32s ease-in-out
+    ;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.05), 0 5px 5px -3px rgba(0,0,0,.2);
+    }
+
+    @media(min-width: $layout-breakpoint) {
+        padding: 30px;
+        margin-bottom: 50px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+        }
+    }
+    &__heading {
+        margin: 0 15px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #58595B;
+
+        @include responsive-font(4vw, 16px, 20px, 18px);
+    }
+    &__description {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.6em;
+    }
+    &__bottom {
+        margin-top: 20px;
+
+        a {
+            font-size: 14px !important;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            color: $colour-brand-orange !important;
+
+            &:hover {
+                text-decoration: none !important;
+            }
+        }
+    }
+}

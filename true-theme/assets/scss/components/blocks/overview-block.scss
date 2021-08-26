@@ -1,0 +1,335 @@
+.overview-block {
+
+    &__nav-container {
+        position: relative;
+        z-index: 5;
+        min-height: 70px;
+        background-color: white;
+    }
+
+    &__tabs {
+        background-color: white;
+        position: relative;
+    }
+
+    &__tab {
+        &.fade-out {
+            position: absolute;
+            z-index: 100;
+            top: 0px;
+            left: 0px; right: 0px;
+        }
+    }
+    
+    &__nav {
+        background-color: white;
+        box-shadow: 0 3px 6px rgba(0,0,0,.12);
+        
+        .nav-tabs {
+            @media(min-width: $screen-sm-min) {
+                display: table !important;
+            }
+            width: 100%;
+            
+            border: 0px;
+
+            > li  {
+                display: table-cell;
+                vertical-align: middle;
+                width: 20%;
+                height: 70px;
+                float: none !important;
+                padding: 0px 5px;
+                position: relative;
+                border-top: 4px solid transparent;
+                border-bottom: 4px solid transparent;
+
+                > a {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: $colour-body-text;
+                    border: 0px;
+                    font-size: 13px;
+                    padding: 0px 0px;
+                    border-radius: 0px;
+                    background-color: transparent;
+                    line-height: 16px;
+                    text-align: center;
+                    margin: 0px;
+                    
+                    span {
+                        position: relative;
+                        bottom: -1px;
+                    }
+
+                    &:active,
+                    &:focus,
+                    &:hover {
+                        background-color: transparent;
+                    }
+                    
+                    // Mobile
+                    @media(max-width: $screen-xs-max) {
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+
+                .btn { margin-top: 1px; font-size: 13px; }
+
+                &.active {
+                    border-bottom: 4px solid $colour-brand-pink;
+
+                    a {
+                        border: 0px;
+                        color: $colour-brand-pink;
+                    }
+                }
+            }
+        }
+
+        @media(max-width: $screen-xs-max) {
+            .nav-tabs {
+                display: none;
+                position: absolute;
+                top: 100%;
+                z-index: 40;
+                background-color: darken($colour-brand-orange, 10%);
+
+                > li {
+                    display: block;
+                    height: auto;
+                    width: 100% !important;
+                    padding: 0px;
+                    border: 0px !important;
+                    margin: 0px;
+
+                    > a {
+                        padding: 15px;
+                        color: white !important;
+                        margin: 0px;
+
+                        &:hover {
+                            background-color: lighten($colour-brand-orange, 5%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__mobile-nav {
+        position:relative;
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    &__mobile-nav-header {
+        padding: 21px 20px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+        background-color: $colour-brand-orange;
+        transition: background ease 0.35s;
+
+        i {
+            vertical-align: baseline;
+            transition: all ease 0.35s;
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+
+        &:hover { background-color: darken($colour-brand-orange, 10%); }
+
+        &.opened i { transform: rotate(180deg); }
+    }
+
+    
+    /** --------------- Nav Colours ----------- **/
+    &--colour-orange & {
+        &__nav .nav-tabs > li.active {
+            border-bottom: 4px solid $colour-brand-orange;
+
+            a { color: $colour-brand-orange; }
+        }
+    }
+
+    &--colour-teal & {
+        &__nav .nav-tabs > li.active {
+            border-bottom: 4px solid $colour-brand-teal;
+
+            a { color: $colour-brand-teal; }
+        }
+    }
+
+    &--colour-pink & {
+        &__nav .nav-tabs > li.active {
+            border-bottom: 4px solid $colour-brand-pink;
+
+            a { color: $colour-brand-pink; }
+        }
+    }
+
+    &--colour-yellow & {
+        &__nav .nav-tabs > li.active {
+            border-bottom: 4px solid #ffcc3a;
+
+            a { color: #ffcc3a; }
+        }
+    }
+
+    &--colour-black & {
+        &__nav .nav-tabs > li.active {
+            border-bottom: 4px solid $colour-dark-grey;
+
+            a { color: $colour-dark-grey; }
+        }
+    }
+    
+    /** -------------./ Nav Colours ----------- **/
+}
+
+@media(min-width: $screen-md-min) {
+    body.admin-bar {
+        .overview-block__nav--fixed {
+            top: 32px;
+        }
+    }
+}
+
+.overview-block-item {
+    text-align: left;
+    
+    &__banner {
+        background-color: white;
+        background-size: contain;
+        text-align: left;
+        
+        
+        // Tablet Portrait and below
+        @media(max-width: $screen-sm-max) {
+            height: 400px !important;
+            
+            .overview-block-item__icon {
+                display: inline-block;
+                margin-left: 5px;
+                vertical-align: middle;
+                margin-top: -5px;
+            }
+            
+            .layout-table__cell {
+                vertical-align: bottom;
+                padding-bottom: 25px;
+            }
+            
+            .banner__content {
+                height: 400px !important;
+                background-image: none !important;
+                text-align: center;
+                
+                h2 {
+                    font-weight: 500;
+                    font-size: 20px;
+                    min-height: 40px;
+                    
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+        @media(max-width: $screen-xs-max) {
+            height: 280px !important;
+            .banner__content {
+                height: 280px !important;   
+            }
+            
+            .layout-table__cell {
+                padding-bottom: 15px;
+            }
+        }
+        
+        // Tablet and above
+        @media(min-width: $screen-md-min) {
+            background-image: none !important;
+            background-size: auto !important;
+            
+            .banner__content {
+                background-position: center;
+                background-repeat: no-repeat;
+                
+                h2 {
+                    padding-left: 30px;    
+                }
+            }
+        }
+    }
+
+    /** --------------- Colours ----------- **/
+    .overview-block-item__banner,
+    .overview-block-item__features h3 { 
+        color: white;
+    }
+    
+    &--colour-black {
+        
+        .overview-block-item__banner,
+        .overview-block-item__features h3 {
+            color: $colour-dark-grey;
+        }
+    }
+
+    &--colour-orange {
+        .overview-block-item__banner,
+        .overview-block-item__features h3 {
+            color: $colour-brand-orange;
+        }
+    }
+
+    &--colour-teal {
+        .overview-block-item__banner,
+        .overview-block-item__features h3 {
+            color: $colour-brand-teal;
+        }
+    }
+
+    &--colour-pink {
+        .overview-block-item__banner,
+        .overview-block-item__features h3 {
+            color: $colour-brand-pink;
+        }
+    }
+
+    &--colour-yellow {
+        .overview-block-item__banner,
+        .overview-block-item__features h3 {
+            color: #ffcc3a;
+        }
+    }
+/** -------------./ Colours ----------- **/
+
+&__banner { 
+        h2 { margin-bottom: 0px; }
+    }
+    
+    &__icon {
+        font-size: 2.1em;
+        margin-top: -50px;
+        margin-left:-5px;
+    }
+
+
+    &__features {
+       
+        p:last-child { margin-bottom:25px; }
+    }
+
+    @media(min-width: $screen-sm-min) {
+        &__features p:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}

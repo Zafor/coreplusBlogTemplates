@@ -1,0 +1,312 @@
+<?php
+
+/*
+
+Template Name: Trial
+
+*/
+
+
+
+    // if they posted the trial data, send it through to us!
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+
+    {
+
+        coreplus_trial_subscribe();
+
+    } else {
+
+        $sourceJSON = coreplus_get_referrers();
+
+    }
+
+
+
+    get_header(); 
+
+    //TrueLib::getTemplatePart('page-banner');
+
+
+
+    if (have_posts()) : while (have_posts()) : the_post(); 
+
+    ?>
+
+    <?php TrueLib::getTemplatePart('image-page-banner'); ?>
+
+    <div id="main" class="wrapper">
+
+        <?php createTrueBreadcrumb()?>  
+
+        
+
+        <script type="text/javascript">
+
+            referrerJSON = jQuery.parseJSON('<?php echo $sourceJSON ?>'); 
+
+            jQuery( document ).ready(function( $ ) 
+
+            {
+
+                function validEmail(emailStr)
+
+                {
+
+                    var filter = /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/
+
+                    if (filter.test(emailStr) == false) {
+
+                        return false
+
+                    }
+
+                    else {
+
+                        return true
+
+                    }
+
+                }
+
+                
+
+                
+
+                function validatedForm(){
+
+                    var validated = true
+
+                    $('form input, form textarea').each(function(k,inputObj){
+
+                        if(($(this).hasClass('required') && !$(this).val()) || $(this).hasClass('invalid')){
+
+                            $(this).addClass('errored')
+
+                            if($(this).attr('id') != 'repeatemail'){
+
+                                validated = false
+
+                            }
+
+                        }
+
+                        else if(!$(this).hasClass('invalid')){
+
+                            $(this).removeClass('errored')
+
+                        }
+
+                        if($(this).hasClass('email') && !validEmail($(this).val())){
+
+                            $(this).addClass('errored erroredEmail')
+
+                            $(this).next('img').fadeOut()
+
+                            if($(this).attr('id') != 'repeatemail'){
+
+                                validated = false
+
+                            }
+
+                        }
+
+                        else if($(this).hasClass('email') && $(this).val()){
+
+                            $(this).removeClass('errored erroredEmail')
+
+                        }
+
+                    })
+
+                    return validated
+
+                }
+
+                
+
+                $('#trialForm').submit(function(e)
+
+                {
+
+                    if (validatedForm()) {
+
+                        $('input[name=referrerDesc]').val($("#referrer option:selected").text());
+
+                    } else {
+
+                        e.preventDefault();
+
+                    }
+
+                });
+
+                
+
+                $('#trialForm .button').click(function()
+
+                {
+
+                    $('#trialForm').submit();
+
+                  
+
+                });
+
+            });
+
+                
+
+        </script>
+
+        <div id="primary" class="site-content">
+
+            <div id="content" role="main">
+
+                <?php 
+
+                   /* if($_GET['sent'] == 'true')
+
+                    { 
+
+                        ?>
+
+                        <div class="success-title trial-title">
+
+                            <?php the_field('success_title')?>
+
+                        </div>
+
+                        <div class='trialSent trial-description entry-content'>
+
+                            <?php the_field('success_message')?>
+
+                        </div>
+
+                        <?php 
+
+                    } else */ { 
+
+                        ?>
+
+                        <div class="page-description trial-title entry-content">
+
+                            <?php the_field('page_title')?>
+
+                        </div>
+
+                        <div class="page-description trial-description-normal entry-content">
+
+                            <?php the_field('page_description')?>
+
+                            
+
+                        </div>
+
+                        
+
+                        <div class="trial-form-container grid_container">     
+
+                            <form id='trialForm' name='trialForm' action='?submit=true' method='post'>
+
+                                <table width='100%' id='trialTable' class='inputTable'>
+
+                                    <tr>
+
+                                        <th>First Name</th>
+
+                                        <td>
+
+                                            <input type='text' name='firstname' id='firstname' maxlength='100' class='required' />
+
+                                        </td>
+
+                                    </tr>                                   
+
+                                    <tr>
+
+                                        <th>Last Name</th>
+
+                                        <td>
+
+                                            <input type='text' name='surname' id='surname' maxlength='100' class='required' />
+
+                                        </td>
+
+                                    </tr>
+
+              
+
+                                    <tr>
+
+                                        <th>Email</th>
+
+                                        <td>
+
+                                            <input type='text' name='email' id='email' maxlength='200' class='required email' />
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr id='secondEmail'>
+
+                                        <th>Repeat Email</th>
+
+                                        <td>
+
+                                            <input type='text' name='repeatemail' id='repeatemail' maxlength='200' class='email' />
+
+                                            
+
+                                        </td>
+
+                                    </tr>
+
+<tr>
+
+                                        <th>Promo Code</th>
+
+                                        <td>
+
+                                            <input type='text' name='promocode' id='promocode' maxlength='10' style='width:141px;' />
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td colspan='2'>
+
+                                            <a class='button' style='float:right;'>Let's Begin</a>
+
+                                        </td>
+
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+
+                        <?php 
+
+                    } 
+
+                ?>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<?php endwhile; endif; the_title('',false,'') ?>
+
+
+<?php get_footer(); ?>

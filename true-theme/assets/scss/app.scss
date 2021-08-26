@@ -1,0 +1,91 @@
+/*!
+ * Built on the second floor of 115-117 Chapel Street
+ *
+ * @author TrueAgency
+ */
+
+/**
+ * ================== Imports ==================
+ */
+
+@import "theme/variables";
+@import "../vendor/font-awesome/scss/font-awesome";
+@import "../vendor/bootstrap/scss/_bootstrap";
+@import "../vendor/slick/scss/slick";
+@import "../vendor/magnific-popup/scss/magnific";
+@import "../vendor/materialize/sass/materialize";
+
+/**
+ * Additional normalize rules
+ **/
+ *, ::before, ::after {
+    border-width: 0;
+    border-style: solid;
+    border-color: #e0e0e0;
+ }
+
+
+@import "theme/all";
+
+
+/**
+ * ================== Bootstrap Overrides ==================
+ *
+ * Perferred to override bootstrap default behaviours in
+ * our own files.
+ * Example: to override bootstrap navbar, create a file:
+ *    - /assets/vendor/bootstrap/less/navbar => /bootstrap/navbar
+ *
+ */
+
+/**
+ * ================== Components ==================
+ *
+ * Partials, modularised and/or reusable LESS files.
+ * e.g. components/footer, components/header
+ *
+ */
+@import "components/all";
+
+/**
+ * ================== Pages ==================
+ *
+ * Page specific LESS files. Where it doesnt
+ * fit as components, pages is the place to go.
+ *
+ */
+@import "pages/404";
+
+
+.v1-theme {
+    background-color: white;
+    padding-bottom: 50px;
+
+    box-sizing: content-box;
+
+    * {
+        box-sizing: content-box;
+    }
+
+    &--no-padding {
+        padding-bottom: 0px;
+    }
+
+    @import "v1-theme/base";
+    @import "v1-theme/styles";
+    @import "v1-theme/blog";
+
+    &--no-padding {
+        padding-bottom: 0px;
+    }
+}
+
+.vc_row {
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.grecaptcha-badge { visibility: hidden; }

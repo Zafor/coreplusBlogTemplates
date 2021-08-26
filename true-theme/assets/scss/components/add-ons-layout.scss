@@ -1,0 +1,39 @@
+$layout-breakpoint: 1127px;
+
+.add-ons-layout {
+    position: relative;
+    margin: 15px 0 0;
+    @extend .clearfix;
+
+    &__outer {
+        overflow: hidden;
+    }
+
+    &__right {
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+    @media(min-width: $layout-breakpoint) {
+        margin: 6.5rem 0 0;
+
+        &__left,
+        &__right {
+            float: left;
+        }
+        $add-ons-layout-left-width: 200px;
+        &__left {
+            width: $add-ons-layout-left-width;
+            padding-right: 25px;
+
+            position: absolute;
+            top: 0;
+            transition: all 0.22s ease;
+        }
+        &__right {
+            margin-top: 0;
+            margin-left: 225px;
+            width: calc(100% - #{$add-ons-layout-left-width} - 25px);
+        }
+    }
+}

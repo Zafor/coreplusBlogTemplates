@@ -1,0 +1,6 @@
+fields: []
+pages:
+  - pages/lp-security.acf.yaml
+  - pages/trial-v2.acf.yaml
+blueprints:
+  - blueprint/basic-content.acf.yaml

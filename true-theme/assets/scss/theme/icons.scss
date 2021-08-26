@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?qwhgrs');
+  src:  url('../fonts/icomoon.eot?qwhgrs#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?qwhgrs') format('truetype'),
+    url('../fonts/icomoon.woff?qwhgrs') format('woff'),
+    url('../fonts/icomoon.svg?qwhgrs#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="moon-icon-"], [class*=" moon-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.4;
+  display: inline-block;
+  vertical-align: text-bottom;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.moon-icon--search_icon:before {
+  content: "\e905";
+}
+
+.moon-icon--calendar:before {
+  content: "\e903";
+}
+.moon-icon--gears:before {
+  content: "\e906";
+}
+.moon-icon--hands:before {
+  content: "\e907";
+}
+.moon-icon--wallet:before {
+  content: "\e908";
+}
+.moon-icon--search_icon:before {
+  content: "\e905";
+}
+.moon-icon--play:before {
+  content: "\e904";
+}
+.moon-icon--close:before {
+  content: "\e902";
+}
+.moon-icon--plus:before {
+  content: "\e900";
+}
+.moon-icon--tick:before {
+  content: "\e901";
+}
+
+.moon-icon--space-right {
+    margin-right: 8px;
+}
+
+
+@keyframes shadowIconAnimation {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.shadow-icon {
+    text-align:center;
+    padding: 20px;
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    margin-bottom: 15px;
+    position: relative;
+
+    @include img-retina('../img/icons/icon-shadow.png', '../img/icons/icon-shadow@2x.png', 90px, 90px);
+
+    &--colour-teal { color: $colour-brand-teal; }
+    &--colour-pink { color: $colour-brand-pink; }
+
+    i {
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        right: 0px;
+        font-size: 19px;
+        margin-top: -10px;
+    }
+
+
+    &.animatable {
+        i {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all ease 0.35s;
+        }
+
+        &.do-animation {
+            i {
+                opacity: 1;
+                animation-name: shadowIconAnimation;
+                animation-duration: 0.5s;
+            }
+        }
+    }
+}
+
+

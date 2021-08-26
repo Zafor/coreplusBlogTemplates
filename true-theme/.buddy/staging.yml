@@ -1,0 +1,124 @@
+# ==============================
+# Buddy YAML Config
+# ==============================
+# Version: 1.0
+# > This is to be used with True Base with evolve engine ~1.0
+# > Guide: https://www.notion.so/trueagency/Buddy-Pipelines-0f87c30890b4418daa7d5f3e1eecf2a4
+- pipeline: "Staging"
+  trigger_mode: "ON_EVERY_PUSH" # Either "MANUAL" or "ON_EVERY_PUSH"
+  ref_name: "staging"
+  ref_type: "BRANCH"
+  target_site_url: "https://qa-web.coreplus.com.au/"
+  trigger_condition: "ALWAYS"
+  actions:
+  - action: "Execute: rm yarn.lock"
+    type: "BUILD"
+    working_directory: "/buddy/web"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "18.04"
+    execute_commands:
+    - "rm -rf node_modules"
+    - "rm yarn.lock"
+    volume_mappings:
+    - "/:/buddy/web"
+    trigger_condition: "ALWAYS"
+    shell: "BASH"
+  - action: "Execute: npm install"
+    type: "BUILD"
+    working_directory: "/buddy/web/"
+    docker_image_name: "library/node"
+    docker_image_tag: "10.15.3"
+    execute_commands:
+    - "yarn install"
+    - "gulp --production"
+    - "yarn parcel:build"
+    - ""
+    setup_commands:
+    - "npm install -g yarn gulp grunt-cli rsync"
+    - ""
+    mount_filesystem_path: "/buddy/web/"
+    shell: "BASH"
+    trigger_condition: "ALWAYS"
+  # Composer Install
+  # Install our PHP /vendor dependencies
+  - action: "Composer Install"
+    type: "BUILD"
+    working_directory: "/buddy/web"
+    docker_image_name: "library/php"
+    docker_image_tag: "7.2.22"
+    execute_commands:
+    - "composer install"
+    setup_commands:
+    - "apt-get update && apt-get install -y git zip"
+    - "curl -L https://phar.phpunit.de/phpunit.phar -o /usr/local/bin/phpunit"
+    - "chmod +x /usr/local/bin/phpunit"
+    - "curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer"
+    - "# php ext gd"
+    - "apt-get install -y libfreetype6-dev"
+    - "apt-get install -y libjpeg62-turbo-dev"
+    - "apt-get install -y libpng-dev"
+    - "docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/"
+    - "docker-php-ext-install gd"
+    - "# php ext zip"
+    - "apt-get install -y zip"
+    - "apt-get install -y unzip"
+    - "apt-get install -y zlib1g-dev"
+    - "docker-php-ext-install zip"
+    - "# php ext pdo_mysql"
+    - "docker-php-ext-configure pdo_mysql --with-pdo-mysql"
+    - "docker-php-ext-install pdo_mysql"
+    mount_filesystem_path: "/buddy/web"
+    trigger_condition_paths:
+    - "composer.lock"
+    shell: "BASH"
+    trigger_condition: "ON_CHANGE_AT_PATH"
+  - action: "Rsync to server"
+    type: "RSYNC"
+    local_path: "/"
+    remote_path: "$FTP_PATH"
+    login: "$FTP_USERNAME"
+    host: "$FTP_HOST"
+    port: "$FTP_PORT"
+    env_key: "secure!secret"
+    authentication_mode: "PASS"
+    password: "$FTP_PASSWORD"
+    archive: true
+    compress: true
+    deployment_excludes:
+    - "/.git/"
+    - "/node_modules/"
+    - "/.cache-loader/"
+    - "/.env"
+    - "/vendor/bin/"
+    trigger_condition: "ALWAYS"
+  - action: "Upload files to $FTP_PATH"
+    type: "SFTP"
+    input_type: "BUILD_ARTIFACTS"
+    local_path: "/_buddy_private/.env"
+    login: "$FTP_USERNAME"
+    password: "$FTP_PASSWORD"
+    remote_path: "$FTP_PATH"
+    host: "$FTP_HOST"
+    port: "$FTP_PORT"
+    authentication_mode: "PASS"
+  variables:
+  - key: "FTP_HOST"
+    value: "35.244.105.155"
+    id: 198497
+    description: ""
+  - key: "FTP_PASSWORD"
+    value: "secure!Q2Pbm7/CRdu0gZaj9n3R7g==.XDH7e0zpyIqUMX8nEWa0Kg=="
+    id: 198498
+    description: ""
+  - key: "FTP_PATH"
+    value: "/www/corepluscomau_502/public/wp-content/themes/true-theme"
+    id: 198499
+    description: ""
+  - key: "FTP_USERNAME"
+    value: "corepluscomau"
+    id: 198500
+    description: ""
+  - key: "FTP_PORT"
+    value: "38901"
+    id: 198501
+    description: ""

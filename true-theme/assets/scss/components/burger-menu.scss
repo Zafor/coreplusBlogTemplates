@@ -1,0 +1,76 @@
+.burger-menu {
+    width: 30px; height: 22px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-left: 5px;
+    border: 0px;
+    background-color: transparent;
+
+    display: inline-block;
+    vertical-align: middle;
+    outline: none;
+}
+
+.burger-menu__label {
+    text-transform: uppercase;
+    font-weight: 700;
+    display: none;
+    vertical-align: middle;
+
+    @media(min-width: $screen-sm-min) {
+        display:inline-block;
+    }
+}
+
+.burger-menu span {
+    display: block;
+    position: absolute;
+    height: 3px; width: 100%;
+    background-color: $colour-brand-orange;
+    opacity: 1; left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.burger-menu span:nth-child(1) {
+    top: 0px;
+
+}
+
+.burger-menu span:nth-child(2),.burger-menu span:nth-child(3) {
+    top: 9px;
+}
+
+.burger-menu span:nth-child(3) {
+    background-color: $colour-brand-orange;
+}
+
+.burger-menu span:nth-child(4) {
+    top: 18px;
+}
+
+.burger-menu.open span {
+    background-color: #000;
+}
+
+.burger-menu.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+.burger-menu.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.burger-menu.open span:nth-child(4) {
+    top: 18px; width: 0%;
+    left: 50%;
+}

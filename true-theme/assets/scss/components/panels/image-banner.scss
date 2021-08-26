@@ -1,0 +1,55 @@
+.image-banner {
+    position: relative;
+    height: calc(100vh - 77px);
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    background-color: #232323;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media(min-width: $screen-sm-min) {
+        height: calc(100vh - 122px);
+    }
+
+    @media(min-width: 992px) {
+        body.admin-bar & {
+            height: calc(100vh - 152px);
+        }
+    }
+
+    div.v1-theme {
+        background-color: transparent;
+
+        div.breadcrumbs {
+            color: white;
+            border-bottom: 0px;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .top-banner {
+        background-color: rgba(#f1f1f1, 0.8) !important;
+    }
+
+    &__top {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+    }
+
+    &__text {
+        padding-bottom: 30px;
+        max-width: 586px;
+
+        @media(min-width: $screen-lg-min) {
+            padding-bottom: 96px;
+        }
+    }
+}

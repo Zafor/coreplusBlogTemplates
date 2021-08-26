@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'JennaSue';
+    src: url('../fonts/jennasue.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/jennasue.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/jennasue.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/jennasue.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/jennasue.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+$type-font-size-h1: 40px;
+$type-font-size-h2: 34px;
+$type-font-size-h3: 22px;
+$type-font-size-h4: 18px;
+$type-font-size-h5: 16px;
+$type-font-size-h6: 14px;
+
+body {
+    font-family: "museo-sans",sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: $colour-body-text;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }
+
+h1 { font-size: $type-font-size-h1; }
+h2 { font-size: $type-font-size-h2; }
+h3 { font-size: $type-font-size-h3; }
+h4 { font-size: $type-font-size-h4; }
+h5 { font-size: $type-font-size-h5; }
+h6 { font-size: $type-font-size-h6; }
+
+@media(max-width: $screen-xs-max) {
+    .type--size-h1,
+    h1 { font-size: $type-font-size-h1 * 0.8; }
+    h2 { font-size: $type-font-size-h2 * 0.8; }
+    h3 { font-size: $type-font-size-h3 * 0.8; }
+    h4 { font-size: $type-font-size-h4 * 0.8; }
+    h5 { font-size: $type-font-size-h5 * 0.8; }
+    h6 { font-size: $type-font-size-h6 * 0.8; }
+}
+
+
+.type--size-h1 {
+    font-size: $type-font-size-h1;
+}
+
+.type--contact-title {
+    font-size: 27px;
+    margin-bottom: 45px;
+}
+
+.type--block-title { font-weight: 700; }
+
+/** --------------- Colours ----------- **/
+.type--colour-dark { color: $colour-dark-body-text; }
+.type--colour-teal { color: $colour-brand-teal; }
+.type--colour-pink { color: $colour-brand-pink; }
+.type--colour-orange { color: $colour-brand-orange; }
+/** -------------./ Colours ----------- **/
+
+/** --------------- Weights ----------- **/
+.type--medium-bold { font-weight: 600; }
+.type--bold { font-weight: bold; }
+.type--upper { text-transform: uppercase; }
+/** -------------./ Weights ----------- **/
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }

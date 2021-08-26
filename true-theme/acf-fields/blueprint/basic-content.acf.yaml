@@ -1,0 +1,22 @@
+fields:
+  heading:
+    type: text
+    label: Heading
+    wrapper_width: 50
+  description:
+    label: Description
+    type: 'textarea'
+    new_lines: 'br'
+    rows: 4
+    wrapper_width: 50
+  image:
+    label: Image
+    type: "image"
+    preview_size: 'large'
+    max_size: 5 # in MB
+    max_width: 2000 # in px
+    max_height: 2000 # in px
+  link:
+    label: Link
+    type: "link"
+    return_format: "array"
