@@ -82,240 +82,6 @@
     </div>
 </div>
 
-
-<div class="section desktop-bg-one">
-    <div class="blog-width">
-
-        <div class="keypoint-one-mobile row">
-            <img src="https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Diital-Health.png">
-        </div>
-        <div class="featured">
-            <div class="featured-heading row featured-heading-spacing">
-                <div class="featured-title">
-                    <p class="text-sm-center"><?php echo get_field('blog_key_point_one_title'); ?></p>
-                </div>
-                <div class="featured-brief mt-auto">
-                    <p><?php echo get_field('blog_key_point_one_description'); ?></p>
-                </div>
-            </div>
-        </div>
-        <div class="blog-width">
-            <hr class="line-opacity">
-        </div>
-        <div class="section-blogs blog-width row equal">
-            <?php
-            $args = array(
-                'post_type' => 'post',
-                'post_status' => 'publish',
-                'category_name' => 'digital-health',
-                'posts_per_page' => 3,
-            );
-            $arr_posts = new WP_Query($args);
-
-            if ($arr_posts->have_posts()) :
-
-                while ($arr_posts->have_posts()) :
-                    $arr_posts->the_post();
-            ?>
-                    <div class="section-blog col-lg-4 col-md-6 col-sm-12">
-                        <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                        ?>
-                        <div class="post-image-cover ">
-                            <div class="post-image  progressButton">
-                                <img src="<?php echo $url; ?>" />
-                            </div>
-                        </div>
-                        <p class="blog-category">
-                            <?php echo 'coreplus culture' ?>
-
-                        </p>
-                        <p class="section-blog-title">
-                            <a class="section-blog-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                        </p>
-                        <p>
-                            <?php the_excerpt(); ?>
-                        </p>
-                        <p class="blogging-info">
-
-                            <span class="blogger-thumbnail">
-                                <?php echo get_avatar(get_the_author_meta('ID'), 42); ?>
-                            </span>
-                            <?php get_template_part('partials/author-name-and-date'); ?>
-                        </p>
-                    </div>
-
-            <?php
-                endwhile;
-            endif;
-            wp_reset_postdata();
-            ?>
-        </div>
-        <div class="s-button-div">
-            <a href="https://qa-web.coreplus.com.au/digital-health/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Digital Health &#8594;&nbsp;&nbsp;</a>
-        </div>
-    </div>
-</div>
-
-
-<!-- flex-sm-row-reverse bs class for reversing row elements -->
-
-<!--  -->
-<?php get_template_part('partials/secure-messaging'); ?>
-<!--  -->
-
-<div class="section desktop-bg-two">
-    <div class="blog-width">
-        <div class="keypoint-two-mobile row">
-            <img src="https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Add-ons-1.png">
-        </div>
-        <div class="featured">
-            <div class="featured-heading row featured-heading-spacing">
-                <div class="featured-title">
-                    <p class="text-sm-center"><?php echo get_field('blog_key_point_two_title'); ?></p>
-                </div>
-                <div class="featured-brief margin-top-20">
-                    <p><?php echo get_field('blog_key_point_two_description'); ?></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="blog-width">
-            <hr class="line-opacity">
-        </div>
-
-        <div class="section-blogs blog-width row equal">
-            <?php
-            $args = array(
-                'post_type' => 'post',
-                'post_status' => 'publish',
-                'category_name' => 'online-add-ons-2',
-                'posts_per_page' => 3,
-            );
-            $arr_posts = new WP_Query($args);
-
-            if ($arr_posts->have_posts()) :
-
-                while ($arr_posts->have_posts()) :
-                    $arr_posts->the_post();
-            ?>
-                    <div class="section-blog col-lg-4 col-md-6 col-sm-12">
-                        <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                        ?>
-                        <div class="post-image-cover ">
-                            <div class="post-image  progressButton">
-                                <img src="<?php echo $url; ?>" />
-                            </div>
-                        </div>
-                        <p class="blog-category">
-                            <?php echo 'Add-ons' ?>
-
-                        </p>
-                        <p class="section-blog-title">
-                            <a class="section-blog-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                        </p>
-                        <p>
-                            <?php the_excerpt(); ?>
-                        </p>
-                        <p class="blogging-info">
-
-                            <span class="blogger-thumbnail">
-                                <?php echo get_avatar(get_the_author_meta('ID'), 42); ?>
-                            </span>
-                            <?php get_template_part('partials/author-name-and-date'); ?>
-                        </p>
-                    </div>
-
-            <?php
-                endwhile;
-            endif;
-            wp_reset_postdata();
-            ?>
-        </div>
-        <div class="s-button-div">
-            <a href="https://qa-web.coreplus.com.au/add-ons-page/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Add-ons &#8594;&nbsp;&nbsp;</a>
-        </div>
-    </div>
-</div>
-
-<div class="section desktop-bg-three">
-    <div class="blog-width">
-        <div class="keypoint-three-mobile row">
-            <img src="https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Advisers-1.png">
-        </div>
-        <div class="featured">
-            <div class="featured-heading row featured-heading-spacing">
-                <div class="featured-title">
-                    <p class="text-sm-center"><?php echo get_field('blog_key_point_three_title'); ?></p>
-                </div>
-                <div class="featured-brief">
-                    <p><?php echo get_field('blog_key_point_three_description'); ?></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="blog-width">
-            <hr class="line-opacity">
-        </div>
-
-        <div class="section-blogs blog-width row equal">
-            <?php
-            $args = array(
-                'post_type' => 'post',
-                'post_status' => 'publish',
-                'category_name' => 'covid-19',
-                'posts_per_page' => 3,
-            );
-            $arr_posts = new WP_Query($args);
-
-            if ($arr_posts->have_posts()) :
-
-                while ($arr_posts->have_posts()) :
-                    $arr_posts->the_post();
-            ?>
-                    <div class="section-blog col-lg-4 col-md-6 col-sm-12">
-                        <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-                        ?>
-                        <div class="post-image-cover ">
-                            <div class="post-image  progressButton">
-                                <img src="<?php echo $url; ?>" />
-                            </div>
-                        </div>
-                        <p class="blog-category">
-                            <?php echo 'Advisers' ?>
-
-                        </p>
-                        <p class="section-blog-title">
-                            <a class="section-blog-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                        </p>
-                        <p>
-                            <?php the_excerpt(); ?>
-                        </p>
-                        <p class="blogging-info">
-
-                            <span class="blogger-thumbnail">
-                                <?php echo get_avatar(get_the_author_meta('ID'), 42); ?>
-                            </span>
-                            <?php get_template_part('partials/author-name-and-date'); ?>
-                        </p>
-                    </div>
-
-            <?php
-                endwhile;
-            endif;
-            wp_reset_postdata();
-            ?>
-        </div>
-
-        <div class="s-button-div">
-            <a href="https://qa-web.coreplus.com.au/advisers/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Advisers &#8594;&nbsp;&nbsp;</a>
-        </div>
-    </div>
-</div>
-
-<!--  -->
-<?php get_template_part('partials/subscribe-for-blogs'); ?>
-<!--  -->
-
 <div class="section desktop-bg-four">
     <div class="blog-width">
         <div class="keypoint-four-mobile row">
@@ -465,15 +231,252 @@
     </div>
 </div>
 
+
+
+<!-- flex-sm-row-reverse bs class for reversing row elements -->
+
+<!--  -->
+<?php get_template_part('partials/secure-messaging'); ?>
+<!--  -->
+
+<div class="section desktop-bg-two">
+    <div class="blog-width">
+        <div class="keypoint-two-mobile row">
+            <img src="https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Add-ons-1.png">
+        </div>
+        <div class="featured">
+            <div class="featured-heading row featured-heading-spacing">
+                <div class="featured-title">
+                    <p class="text-sm-center"><?php echo get_field('blog_key_point_two_title'); ?></p>
+                </div>
+                <div class="featured-brief margin-top-20">
+                    <p><?php echo get_field('blog_key_point_two_description'); ?></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-width">
+            <hr class="line-opacity">
+        </div>
+
+        <div class="section-blogs blog-width row equal">
+            <?php
+            $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'category_name' => 'online-add-ons-2',
+                'posts_per_page' => 3,
+            );
+            $arr_posts = new WP_Query($args);
+
+            if ($arr_posts->have_posts()) :
+
+                while ($arr_posts->have_posts()) :
+                    $arr_posts->the_post();
+            ?>
+                    <div class="section-blog col-lg-4 col-md-6 col-sm-12">
+                        <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                        ?>
+                        <div class="post-image-cover ">
+                            <div class="post-image  progressButton">
+                                <img src="<?php echo $url; ?>" />
+                            </div>
+                        </div>
+                        <p class="blog-category">
+                            <?php echo 'Add-ons' ?>
+
+                        </p>
+                        <p class="section-blog-title">
+                            <a class="section-blog-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                        </p>
+                        <p>
+                            <?php the_excerpt(); ?>
+                        </p>
+                        <p class="blogging-info">
+
+                            <span class="blogger-thumbnail">
+                                <?php echo get_avatar(get_the_author_meta('ID'), 42); ?>
+                            </span>
+                            <?php get_template_part('partials/author-name-and-date'); ?>
+                        </p>
+                    </div>
+
+            <?php
+                endwhile;
+            endif;
+            wp_reset_postdata();
+            ?>
+        </div>
+        <div class="s-button-div">
+            <a href="https://qa-web.coreplus.com.au/add-ons-page/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Add-ons &#8594;&nbsp;&nbsp;</a>
+        </div>
+    </div>
+</div>
+
+<div class="section desktop-bg-three">
+    <div class="blog-width">
+        <div class="keypoint-three-mobile row">
+            <img src="https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Advisers-1.png">
+        </div>
+        <div class="featured">
+            <div class="featured-heading row featured-heading-spacing">
+                <div class="featured-title">
+                    <p class="text-sm-center"><?php echo get_field('blog_key_point_three_title'); ?></p>
+                </div>
+                <div class="featured-brief margin-top-20">
+                    <p><?php echo get_field('blog_key_point_three_description'); ?></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-width">
+            <hr class="line-opacity">
+        </div>
+
+        <div class="section-blogs blog-width row equal">
+            <?php
+            $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'category_name' => 'covid-19',
+                'posts_per_page' => 3,
+            );
+            $arr_posts = new WP_Query($args);
+
+            if ($arr_posts->have_posts()) :
+
+                while ($arr_posts->have_posts()) :
+                    $arr_posts->the_post();
+            ?>
+                    <div class="section-blog col-lg-4 col-md-6 col-sm-12">
+                        <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                        ?>
+                        <div class="post-image-cover ">
+                            <div class="post-image  progressButton">
+                                <img src="<?php echo $url; ?>" />
+                            </div>
+                        </div>
+                        <p class="blog-category">
+                            <?php echo 'Industry Experts' ?>
+
+                        </p>
+                        <p class="section-blog-title">
+                            <a class="section-blog-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                        </p>
+                        <p>
+                            <?php the_excerpt(); ?>
+                        </p>
+                        <p class="blogging-info">
+
+                            <span class="blogger-thumbnail">
+                                <?php echo get_avatar(get_the_author_meta('ID'), 42); ?>
+                            </span>
+                            <?php get_template_part('partials/author-name-and-date'); ?>
+                        </p>
+                    </div>
+
+            <?php
+                endwhile;
+            endif;
+            wp_reset_postdata();
+            ?>
+        </div>
+
+        <div class="s-button-div">
+            <a href="https://qa-web.coreplus.com.au/advisers/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Advisers &#8594;&nbsp;&nbsp;</a>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+<?php get_template_part('partials/subscribe-for-blogs'); ?>
+<!--  -->
+
+
+
+<div class="section desktop-bg-one">
+    <div class="blog-width">
+
+        <div class="keypoint-one-mobile row">
+            <img src="https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Diital-Health.png">
+        </div>
+        <div class="featured">
+            <div class="featured-heading row featured-heading-spacing">
+                <div class="featured-title">
+                    <p class="text-sm-center"><?php echo get_field('blog_key_point_one_title'); ?></p>
+                </div>
+                <div class="featured-brief mt-auto">
+                    <p><?php echo get_field('blog_key_point_one_description'); ?></p>
+                </div>
+            </div>
+        </div>
+        <div class="blog-width">
+            <hr class="line-opacity">
+        </div>
+        <div class="section-blogs blog-width row equal">
+            <?php
+            $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'category_name' => 'digital-health',
+                'posts_per_page' => 3,
+            );
+            $arr_posts = new WP_Query($args);
+
+            if ($arr_posts->have_posts()) :
+
+                while ($arr_posts->have_posts()) :
+                    $arr_posts->the_post();
+            ?>
+                    <div class="section-blog col-lg-4 col-md-6 col-sm-12">
+                        <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                        ?>
+                        <div class="post-image-cover ">
+                            <div class="post-image  progressButton">
+                                <img src="<?php echo $url; ?>" />
+                            </div>
+                        </div>
+                        <p class="blog-category">
+                            <?php echo 'coreplus culture' ?>
+
+                        </p>
+                        <p class="section-blog-title">
+                            <a class="section-blog-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                        </p>
+                        <p>
+                            <?php the_excerpt(); ?>
+                        </p>
+                        <p class="blogging-info">
+
+                            <span class="blogger-thumbnail">
+                                <?php echo get_avatar(get_the_author_meta('ID'), 42); ?>
+                            </span>
+                            <?php get_template_part('partials/author-name-and-date'); ?>
+                        </p>
+                    </div>
+
+            <?php
+                endwhile;
+            endif;
+            wp_reset_postdata();
+            ?>
+        </div>
+        <div class="s-button-div">
+            <a href="https://qa-web.coreplus.com.au/digital-health/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All coreplus culture &#8594;&nbsp;&nbsp;</a>
+        </div>
+    </div>
+</div>
+
 <div class="section blog-width">
-    <div class="featured">
+    <div class="">
         <div class="featured-heading row featured-heading-spacing">
             <div class="featured-title">
-                <p class="text-sm-center"><?php echo get_field('guest_bloggers_title'); ?></p>
+                <p class="text-sm-center meet-the-industry-experts"><?php echo get_field('guest_bloggers_title'); ?></p>
             </div>
-            <div class="featured-brief margin-top-20">
-                <p><?php echo get_field('guest_bloggers_description'); ?></p>
-            </div>
+            <!--             <div class="featured-brief margin-top-20">
+                <p><?php //echo get_field('guest_bloggers_description'); 
+                    ?></p>
+            </div> -->
         </div>
     </div>
 
