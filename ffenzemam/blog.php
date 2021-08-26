@@ -151,7 +151,7 @@
             ?>
         </div>
         <div class="s-button-div">
-            <a href="https://qa-web.coreplus.com.au/practice-life/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Practice Life &#8594;&nbsp;&nbsp;</a>
+            <a href="https://qa-web.coreplus.com.au/practice-life/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Practice Life & How Tos &#8594;&nbsp;&nbsp;</a>
         </div>
     </div>
 </div>
@@ -201,7 +201,7 @@
                             </div>
                         </div>
                         <p class="blog-category">
-                            <?php echo 'Product Releases' ?>
+                            <?php echo 'New Releases' ?>
 
                         </p>
                         <p class="section-blog-title">
@@ -226,7 +226,7 @@
             ?>
         </div>
         <div class="s-button-div">
-            <a href="https://qa-web.coreplus.com.au/product-releases-blog/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Product Releases &#8594;&nbsp;&nbsp;</a>
+            <a href="https://qa-web.coreplus.com.au/product-releases-blog/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All New Releases &#8594;&nbsp;&nbsp;</a>
         </div>
     </div>
 </div>
@@ -383,7 +383,7 @@
         </div>
 
         <div class="s-button-div">
-            <a href="https://qa-web.coreplus.com.au/advisers/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Advisers &#8594;&nbsp;&nbsp;</a>
+            <a href="https://qa-web.coreplus.com.au/advisers/" class="btn section-button">&nbsp;&nbsp;&nbsp;View All Industry Experts &#8594;&nbsp;&nbsp;</a>
         </div>
     </div>
 </div>
