@@ -19,7 +19,7 @@
                 <img src="<?php echo get_field('blog_key_point_three_image') ?>" alt="">
             </div>
             <div class="keypoint-header-content-details col-md-6 col-md-pull-6">
-                <h3 class="keypoint-header-title"><?php echo get_field('blog_key_point_three_title'); ?></h3>
+                <h3 style="margin-top:80px" class="keypoint-header-title"><?php echo get_field('blog_key_point_three_title'); ?></h3>
                 <p><?php echo get_field('blog_key_point_three_description'); ?></p>
             </div>
 

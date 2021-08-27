@@ -15,11 +15,11 @@
 <div class="section">
     <div class="blog-width">
         <div class="keypoint-header-content row">
-            <div class="keypoint-header-image  col-md-6 col-md-push-6">
-                <img src="<?php echo get_field('blog_key_point_four_image') ?>" alt="">
+            <div class="keypoint-header-image  col-md-6 col-md-push-6" >
+                <img src="<?php echo get_field('blog_key_point_four_image') ?>"  alt="">
             </div>
             <div class="keypoint-header-content-details col-md-6 col-md-pull-6">
-                <h3 class="keypoint-header-title"><?php echo get_field('blog_key_point_four_title'); ?></h3>
+                <h3 style="margin-top:30px" class="keypoint-header-title"><?php echo get_field('blog_key_point_four_title'); ?></h3>
                 <p><?php echo get_field('blog_key_point_four_description'); ?></p>
             </div>
 

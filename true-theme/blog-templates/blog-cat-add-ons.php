@@ -21,7 +21,7 @@
                 <img src="<?php echo get_field('blog_key_point_two_image') ?>" alt="">
             </div>
             <div class="keypoint-header-content-details col-md-6 col-md-pull-6">
-                <h3 class="keypoint-header-title"><?php echo get_field('blog_key_point_two_title'); ?></h3>
+                <h3 style="margin-top:60px" class="keypoint-header-title"><?php echo get_field('blog_key_point_two_title'); ?></h3>
                 <p><?php echo get_field('blog_key_point_two_description'); ?></p>
             </div>
 

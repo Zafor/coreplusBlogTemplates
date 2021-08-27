@@ -141,7 +141,7 @@
 				</p>
               <button id="noButton" class="btn feedback-button"> Not sure</button>
 		<form id="feedback-form" method="POST" name="subscriber-email" action="<?php echo admin_url('admin-ajax.php'); ?>">
-					<textarea id="visitorFeedback" rows="4" cols="150" style="margin-top:30px;margin-bottom:20px;text-align:left;display:none" class="btn blog-subscriber-email no-wrap" name="visitor-feedback" required placeholder="Sorry about that! How can we make it better?"></textarea>
+					<textarea id="visitorFeedback" rows="4" cols="150" style="margin-top:30px;margin-bottom:20px;text-align:left;display:none;text-transform:none" class="btn blog-subscriber-email no-wrap" name="visitor-feedback" required placeholder="Sorry about that! How can we make it better?"></textarea>
 					<br>
 				<input type="hidden" name="action" value="blog_feedback" >
 				<input type="submit" style="display:none;margin-left:auto;margin-right:auto" id="feedbackButton" value="Submit Your Feedback" class="btn feedback-button">
