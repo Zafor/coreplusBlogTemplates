@@ -27,6 +27,11 @@ End of comment */
 
 /* blog subscription form style override */
 
+.same-line-text {
+  /* Keeping the hyperlink text together */
+  white-space: nowrap;
+}
+
 /* Pagination */
 
 .page-numbers {
@@ -111,7 +116,15 @@ End of comment */
   display: -webkit-flex;
   flex-wrap: wrap;
 }
+.meet-the-industry-experts {
+  font-size: 40px;
+}
 
+@media (max-width: 768px) {
+  .meet-the-industry-experts {
+    font-size: 2.5rem;
+  }
+}
 @media (min-width: 768px) {
   .row.equal {
     display: flex;
@@ -142,6 +155,7 @@ End of comment */
 
 .blog-nav-search {
   text-align: right;
+  margin-top: -25px;
 }
 
 .blog-nav-search input {
@@ -323,6 +337,11 @@ End of comment */
   /*   justify-content: center; */
 }
 
+@media screen and (max-width: 768px) {
+  .featured {
+    display: block;
+  }
+}
 .margin-top-20 {
   margin-top: 20px;
 }
@@ -345,15 +364,29 @@ End of comment */
 .featured-heading-spacing {
 }
 
-.featured-title {
-  /* Keeping the hyperlink text together */
-  white-space: nowrap;
-  margin-left: 20px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 4rem;
-  color: #f98731;
-  margin: auto;
+@media screen and (min-width: 769px) {
+  .featured-title {
+    /* Keeping the hyperlink text together */
+    white-space: nowrap;
+    margin-left: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #f98731;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featured-title {
+    padding-top: 50px;
+    margin-left: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    color: #f98731;
+    margin: auto;
+  }
 }
 
 .featured-title p {
@@ -370,6 +403,13 @@ End of comment */
   border-left: 3px #f98731 solid;
   padding-left: 35px;
   padding-right: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-brief p {
+    text-align: center;
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 320px) {
