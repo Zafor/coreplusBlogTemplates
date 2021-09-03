@@ -25,6 +25,13 @@ End of comment */
   color: #7f7f7f;
 }
 
+a {
+  color: inherit;
+}
+a:hover {
+  color: #f98731;
+}
+
 /* blog subscription form style override */
 
 .same-line-text {
@@ -35,14 +42,15 @@ End of comment */
 /* Pagination */
 
 .page-numbers {
-  border: 1px solid #333;
+  border: 1px solid #7f7f7f;
   padding: 10px 15px;
   border-radius: 5px;
   font-weight: 500;
 }
 .current {
-  background: #337ab7;
-  color: #fff;
+  background: transparent;
+  color: #7f7f7f;
+  border: 1px solid #f98731;
 }
 
 /* @override */
@@ -220,47 +228,53 @@ End of comment */
 /* .desktop-bg-featured{
   margin:auto;
   max-width:1750px;
-  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Announce-1.png');
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/08/Featured-Stories.png');
     background-repeat:no-repeat;
     background-size:contain;
+  	background-position:0px -80px;
 }
 
 .desktop-bg-one{
    margin:auto;
-  max-width:1750px;
-  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Diital-Health-1.png');
+  max-width:1920px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/09/coreplus-culture.png');
     background-repeat:no-repeat;
     background-size:contain;
+  background-position:0px 300px;
 }
 .desktop-bg-two{
    margin:auto;
-  max-width:1750px;
-  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Add-ons-2.png');
+  max-width:1920px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/09/Add-ons.png');
     background-repeat:no-repeat;
     background-size:contain;
+  background-position:0px 300px;
 }
 .desktop-bg-three{
    margin:auto;
-  max-width:1750px;
-  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Advisers-2.png');
+  max-width:1920px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/09/Advisers.png');
     background-repeat:no-repeat;
     background-size:contain;
+  background-position:0px 580px;
 }
 .desktop-bg-four{
    margin:auto;
-  max-width:1750px;
-  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Practice-Life-2.png');
+  max-width:1920px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/08/Practice-Life.png');
     background-repeat:no-repeat;
     background-size:contain;
+ 	background-position:0px 300px;
 }
 .desktop-bg-five{
    margin:auto;
-  max-width:1750px;
-  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Product-Releases.png');
+  max-width:1920px;
+  background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/09/Diital-Health.png');
     background-repeat:no-repeat;
     background-size:contain;
-} */
-
+  	background-position:0px 660px;
+}
+ */
 @media screen and (max-width: 1700px) {
   .desktop-bg-featured,
   .desktop-bg-one,
@@ -304,6 +318,7 @@ End of comment */
     background-image: url("https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Announce.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
   }
   .featured-title {
     /*     background-image:url('https://qa-web.coreplus.com.au/wp-content/uploads/2021/06/Announce.png');
@@ -403,6 +418,7 @@ End of comment */
   border-left: 3px #f98731 solid;
   padding-left: 35px;
   padding-right: 35px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {
@@ -486,6 +502,7 @@ End of comment */
 .section-blog {
   padding: 10px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .section-blogs {
@@ -507,7 +524,7 @@ End of comment */
 
 .s-button-div {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 70px;
 }
 
@@ -528,10 +545,14 @@ i {
   text-transform: capitalize;
   color: #ffffff;
 }
+.section-button:hover {
+  color: #fff;
+}
 
 .cta-section {
   background-color: #f98731;
-  margin-bottom: 50px;
+  /*   margin-bottom: 100px; */
+  margin-top: 100px;
 }
 
 .cta-section-content {
@@ -586,6 +607,9 @@ i {
   text-transform: capitalize;
   color: #f98731;
 }
+.section-button-white:hover {
+  color: #f98731;
+}
 
 @media screen and (max-width: 768px) {
   .section-button-white {
@@ -604,6 +628,7 @@ i {
   margin-right: 10px;
   width: 250px;
 }
+
 .btn::placeholder {
   text-transform: capitalize;
   color: #bababa;
@@ -1111,7 +1136,7 @@ i {
 
 .keypoint-header-title {
   color: #f98731;
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 600;
 }
 
@@ -1124,6 +1149,7 @@ i {
   padding-bottom: 35px;
   padding-left: 35px;
   margin-top: 120px;
+  font-size: 18px;
 }
 
 .keypoint-header-image img {
@@ -1131,8 +1157,12 @@ i {
 }
 
 @media screen and (max-width: 768px) {
+  .page-title {
+    text-align: center;
+  }
   .keypoint-header-content-details {
     margin-top: 0px;
+    text-align: center;
   }
   .keypoint-header-image {
     margin-bottom: 40px;
